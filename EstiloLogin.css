@@ -1,0 +1,71 @@
+
+body{
+
+        background-color: black;
+      
+    }
+a{
+   
+    color: azure;
+}
+
+.panlogin{
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente en dispositivos móviles */
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(58, 55, 55);
+    margin: 50px auto; /* Alinea al centro horizontalmente */
+    width: 360px;
+    height: 700px;
+    border-radius: 20px;
+   
+}
+
+.dvtext{
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente en dispositivos móviles */
+    align-items: center; 
+    margin: 5px 10px 20px;
+   
+}
+.dvtext2{
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente en dispositivos móviles */
+    align-items: center; 
+    margin: -10px 8px 50px;
+   
+    
+}
+.dvboton{
+   display: flex;
+   flex-direction: column; /* Apila los elementos verticalmente en dispositivos móviles */
+   align-items: center; 
+    margin: 5px 0px ;
+    border: 0;
+    
+}#btlog{
+  
+    margin: 0px 10px  auto;
+
+    width: 100%;
+    height: 60px;
+    width: 370px;
+border-radius: 10px;
+}
+#camplog{
+  
+    margin: 30px 90px  auto;
+
+    width: 100%;
+    height: 60px;
+border-radius: 10px;
+}
+#camplog2{
+  
+    margin: 30px 90px  auto;
+
+    width: 100%;
+    height: 60px;
+border-radius: 10px;
+}

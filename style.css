@@ -1,0 +1,115 @@
+/* Estilos de la pagina de videojuegos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    
+}
+
+.barra{
+    margin: 0px auto;
+    display: flex; 
+    background-color: #010202;
+    
+}
+    
+header, .conthead{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+
+nav {
+    background-color: #444;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+p{
+    margin: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+.justificado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    
+
+}
+h5, h6{
+    padding: 10px;
+    
+}
+
+hr {
+    color: #333;
+    height: 2px;
+}
+.icon{
+
+
+    margin-left: 27%;
+}
+.redes{
+
+    
+    margin-left: 18%;
+}
+a{
+    text-decoration: none;
+   
+}
+span{
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.icon ,
+.redes{
+    height: 40px;
+    width: 40px;
+}
+

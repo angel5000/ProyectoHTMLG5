@@ -1,0 +1,128 @@
+body{
+    background-color: #121212;
+    font-family: 'Roboto', sans-serif;
+}
+div h1{
+    font-size: 45px;
+    color: #ffffff;
+    line-height : 55px;
+    margin-left: 110px;
+}
+div h2{
+    font-size: 24px;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    line-height : 55px;
+    margin-left: 110px;
+    width: 230px;
+}
+
+.video{
+    margin-left: 110px;
+}
+
+#miIframe {
+    border: 2px solid #121212;
+  }
+
+div h3{
+    font-size: 22px;
+    font-weight: normal;
+    color: #ffffff;
+    margin-left: 110px;
+    width: 800px;
+    
+}
+
+img{
+    max-width: 100%; 
+    max-height: 100%;
+    padding-left: 60px;
+    margin-left: 10px;
+    /*flex-grow: 1;*/
+}
+
+
+div#contenedorvideo{
+    float: left;
+    width: 930px;
+    height: 980px;
+    background-color: #121212;
+}
+
+div#contenedorimg{
+    float: right;
+    margin-top: 240px;
+    margin-right: 200px;
+    width: 300px;
+    height: 500px;
+    background-color: #121212;
+}
+
+
+div h4{
+    font-size: 19px;
+    color: #F5F5F5;  
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    padding-top: 50px;
+}
+
+
+.boton1 button {
+    width: 300px;
+    height: 45px;
+    background: #aa0808; 
+    color: #fff; 
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.boton2 button {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    width: 300px;
+    height: 35px;
+    background: #121212; 
+    color: #fff; 
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.boton3 button {
+    font-size: 14px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff;
+    width: 300px;
+    height: 25px;
+    background: #121212; 
+    color: #fff; 
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+div h5{
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    color: #918d8d;
+    margin-left: 110px;
+    width: 800px;
+}
+
+div h6{
+    font-size: 16px;
+    text-decoration: underline;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+    margin-left: 150px;
+    width: 350px;
+}
+
+ 

@@ -1,0 +1,51 @@
+
+body {
+    background-color: rgb(18, 18, 18);
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+header {
+  background-color: blueviolet;
+  color:whitesmoke;
+    text-align: center;
+  }
+  
+  nav a {
+    color: whitesmoke;
+    text-align: left;
+  }
+.secciones-contenedor {
+  background-color: rgb(50, 5, 54);
+  color: white;
+    display: flex;
+    justify-content: space-around;
+  }
+
+.imagen-principal{
+  max-width: 50%;
+  height: auto;
+  display: block; 
+  margin: 0 auto; 
+  }
+
+  #regreso:hover {
+background-color: purple;
+}
+
+.Seccion2-contenedor {
+
+  text-align: center;
+}
+  
+
+  .seccionfinal-contenedor {
+    display: flex;
+    justify-content: space-around;
+    
+  }
+  .seccionfinal1-contenedor {
+    
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }

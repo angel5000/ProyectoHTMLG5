@@ -1,0 +1,150 @@
+.barra{
+    
+    background-color: #030707;
+    margin:10px auto;
+    padding:-10px;
+    border:3px solid rgb(194, 182, 241);
+    border-radius:200px 200px 500px 500px;
+    box-shadow:rgb(12, 53, 77) 15px 5px 10px;
+    
+    background:-webkit-linear-gradient(bottom,rgb(0, 0, 0), rgb(3, 1, 5));
+
+ 
+    display: flex; 
+}
+#navbarra{
+    
+    
+    margin: 30px 25px;
+    display: flex; 
+}
+.contenedor {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente en dispositivos móviles */
+    align-items: center; 
+    padding: 10px;
+  }
+  
+  .dtimg {
+    text-align: center;
+    margin: 0 10px; /* Espacio entre los elementos de la lista */
+  }
+  
+  @media (min-width: 768px) {
+    .contenedor {
+      flex-direction: row; /* Elementos en fila en pantallas más grandes */
+    }
+  
+    .list {
+      margin-top: 0; 
+    }
+  }
+  
+.carrusel{
+    display: flex; 
+    width: 100%;
+  
+    overflow-x: scroll;
+    scroll-snap-type: mandatory;
+    width: 650px;
+}
+
+.imagenes{
+    flex: 0 0 100%;
+  width: 100;
+    scroll-snap-align: center;
+    float: left;
+    object-fit: cover;
+}
+img{
+    max-width: 100%;
+}
+
+.linear{
+   
+    flex:1;
+    text-align: right;
+  
+}
+
+.list{
+    flex:1;
+    text-align: left;
+    min-height: 20%; 
+    height: auto !important;
+    height: 20%; 
+    margin: 0 auto -20px;
+     margin-left: 10px;
+}
+
+.divnav{
+  
+  /* width: 1280px;*/
+    background-color: #000000; 
+    border-radius: 20px; 
+
+}
+
+.navbar{
+   
+    display: flex; /* Usa flexbox para centrar horizontal y verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; 
+  margin-bottom: 30px;
+
+}
+
+
+.conjconten{
+
+    padding-left: 100px ;
+    padding-bottom: 150px; 
+    justify-content: center;  
+    margin: 0 auto -100px;
+     background-color: #000000; 
+     border-radius: 20px; 
+     width: 800px;
+
+
+}
+.contendest{
+  
+  margin: 0px auto 90px;
+    vertical-align:bottom;
+
+     background-color: #000000; 
+    
+}
+.contenedorJD{
+
+    display: flex;
+    justify-content:space-between;
+    
+  
+}
+
+.frame{
+  background-color: #242729;  
+  border-radius: 20px; 
+margin: 10px;
+}
+
+.ftr{
+  
+    height: 100px; 
+    background-color: gray;
+}
+
+.contpromo{
+    
+    min-height: 0%; 
+    height: auto !important;
+    height: 10%; 
+    margin: 0 auto 500px;
+    vertical-align:bottom;
+    width: 370px; 
+  
+    background-color: #88959e;  
+    border-radius: 20px; 
+
+}
