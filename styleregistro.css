@@ -10,7 +10,21 @@
     border-radius: 9px;
     
 }
-
+#regreso{
+    width: 100px;
+    height: auto;
+    color: #f1efef;
+    text-decoration: solid;
+    margin-left: 60px;
+}
+.atras{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-radius: 9px
+}
 label{
     color: #f1efef;
     margin-left: 17px;
