@@ -6,6 +6,10 @@ div h1{
     font-size: 14px;
     color: #F5F5F5;
 }
+#regreso { 
+    text-decoration: none;
+    color: white;
+}
 div h2{
     font-size: 14px;
     color: #C2C2C2;
