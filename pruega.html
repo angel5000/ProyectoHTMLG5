@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .carrusel {
+      display: flex;
+      width: 100%;
+      border-radius: 20px;
+      overflow-x: scroll;
+      scroll-snap-type: mandatory;
+      padding-bottom: 10px;
+      width: 650px;
+animation: carrusel 25s infinite alternate ease-in-out
+    }
+
+    .imagenes {
+      flex: 0 1 100%;
+      width: 100%;
+      scroll-snap-align: center;
+      float: left;
+      object-fit: cover;
+    }
+@keyframes carrusel {
+   0%{margin-left: 0;}
+   20%{margin-left: 0;}
+   25%{margin-left: -100%;}
+   45%{margin-left: -100%;}
+   50%{margin-left: -100%;}
+   70%{margin-left: -200%;}
+ 75%{margin-left: -300%;}
+80%{margin-left: -500%;}
+   100%{margin-left: -600%;}
+}
+  
+</style>
+</head>
+<body>
+
+<div class="carrusel" id="miCarrusel">
+  <img class="imagenes" src="imagenes/hl2.jpg" alt="Imagen 1">
+  <img class="imagenes" src="imagenes/awpt.jpg" alt="Imagen 2">
+  <img class="imagenes" src="imagenes/awpt.jpg" alt="Imagen 3">
+  <!-- Agrega más imágenes según sea necesario -->
+</div>
+
+   
+   
+  </script>
+
+</body>
+
+   
+</html>
