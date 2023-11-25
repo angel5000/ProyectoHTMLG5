@@ -1,6 +1,8 @@
 body{
-    background-color: #121212;
+    background-color: #000000;
     font-family: 'Roboto', sans-serif;
+  
+    background: linear-gradient(rgb(22, 22, 22), rgba(85, 58, 182, 0.712));
 }
 div h1{
     font-size: 14px;
@@ -150,6 +152,6 @@ span.pa{
     margin-left: 5px; 
     cursor: pointer;
 }
-
-
-
+.filtro{
+   display: none;/*ocultar*/
+}

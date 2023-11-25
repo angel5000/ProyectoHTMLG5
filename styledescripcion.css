@@ -1,12 +1,14 @@
 body{
     background-color: #121212;
     font-family: 'Roboto', sans-serif;
+    background: linear-gradient(rgb(22, 22, 22), rgba(53, 39, 119, 0.74));
 }
 div h1{
     font-size: 45px;
     color: #ffffff;
     line-height : 55px;
     margin-left: 110px;
+    
 }
 div h2{
     font-size: 24px;
@@ -19,6 +21,7 @@ div h2{
 
 .video{
     margin-left: 110px;
+   
 }
 
 #miIframe {
@@ -37,17 +40,49 @@ div h3{
 img{
     max-width: 100%; 
     max-height: 100%;
-    padding-left: 60px;
+    padding-left: 1px;
     margin-left: 10px;
     /*flex-grow: 1;*/
-}
 
+    background: linear-gradient(rgb(22, 22, 22), rgba(14, 11, 27, 0.1));
+    border-radius: 50px;
+
+    border:3px solid rgb(194, 182, 241);
+}
+#imgport{
+  
+    margin-left: 40px;
+    padding-left: 10px;
+   padding-top: 10px;
+    /*flex-grow: 1;*/
+
+ 
+    border-radius: 50px;
+}
+#contenedorimg2{
+ float: right;
+    margin-top: 240px;
+    padding-top: 40px;
+    border-bottom: 10px;
+    padding-bottom: 10px;
+    margin-right: 100px;
+
+    background: linear-gradient(rgb(0, 0, 0), rgba(63, 47, 134, 0.1));
+    border-radius: 10px;
+
+    border:2px solid rgb(194, 182, 241);
+}
 
 div#contenedorvideo{
     float: left;
     width: 930px;
     height: 980px;
+    padding-bottom: 250px;
     background-color: #121212;
+    background: linear-gradient(rgb(22, 22, 22), rgba(14, 11, 27, 0.1));
+    border-radius: 50px;
+
+    border:3px solid rgb(194, 182, 241);
 }
 
 div#contenedorimg{
@@ -57,7 +92,12 @@ div#contenedorimg{
     width: 300px;
     height: 500px;
     background-color: #121212;
+    background: linear-gradient(rgb(0, 0, 0), rgba(63, 47, 134, 0.1));
+    border-radius: 50px;
+
+    border:2px solid rgb(194, 182, 241);
 }
+
 
 
 div h4{

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="autor" content="ALVARADO TRIANA">
     <title>Document</title>
     <link rel="stylesheet" href="stylegenero.css">
+    <script src="js/buscadorExplorar.js"></script>
 </head>
 <body>
         <nav> 
@@ -44,8 +45,8 @@
     </div>
     <h3>Nuevos Lanzamientos</h3>
     <section id="juegos">
-        <div class="contenedorju">
-            <div class="juego">
+        <div class="contenedorju"><!--Aqui se agregan los juegos-->
+            <div class="juego"><!--este es uno de los muchos juegos-->
                 <figure class="juegofoto"><img src="https://cdn1.epicgames.com/spt-assets/9f174e1458f748dab8a4652e1e20b644/1001-jigsaw-legends-of-mystery-a3evy.jpg?h=480&quality=medium&resize=1&w=360" alt="juego1">
                     <div class="textoJuego">
                     <span class="base">Juego Base</span>
@@ -126,13 +127,13 @@
                 </figure>
             </div>
         </div>
-        <div class="panel">
+        <div class="panel"><!--panel de filtros-->
             <h1>Filtros (1)</h1>
-            <div class="barra-busqueda">
-                <input type="text" placeholder="Palabras Claves">
+            <div class="barra-busqueda"><!--barra de busqueda-->
+                <input type="text" placeholder="Palabras Claves" id="buscador">
                 <button>Buscar</button>
             </div>
-            <div class="panelopc">
+            <div class="panelopc"> <!--panel de opciones-->
                 <span class="pa">EVENTOS</span>
                 <h6>____________________</h6>
                 <span class="pa">PRECIO</span>
