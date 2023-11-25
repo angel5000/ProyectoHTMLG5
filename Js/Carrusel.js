@@ -1,15 +1,6 @@
 
 
-const imgs =document.querySelector(".imagenes");
-let contenedor = documento.querySelector(".carrusel");
-let imgultima =contenedor[contenedor.length-1];
-imgs.insertAdjacentElement('afterbegin',imgultima);
-
-function sgt(){
-  
-}
-
-/*const carrusel = document.getElementById('Micarrusel');
+const carrusel = document.getElementById('Micarrusel');
 let intervalo=null;
 const start =()=>{
 intervalo=setInterval(function(params){
@@ -22,5 +13,16 @@ intervalo=setInterval(function(params){
 },10);
 
 };
- start();*/
+const stop =()=>{
+clearInterval(intervalo);
+};
+carrusel.addEventListener('mouseover',()=>{
+stop();
+
+})
+carrusel.addEventListener('mouseout',()=>{
+  start();
+  
+  })
+ start();
     

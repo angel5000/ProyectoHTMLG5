@@ -36,18 +36,17 @@
 
     .listado3 {
       display:flex;
-      display: inline;
+      display: inline-block;
       margin-right: 20px;
     
-      padding-left: 80px;
+      padding-right: 210px;
    
       color: #fff;
+      max-width: 1px;
+      min-width: 0px;
     
     }
-.marcado{
-  box-shadow:rgb(12, 53, 77) 5px 2px 10px;
-  background:-webkit-linear-gradient(rgb(0, 0, 0), rgb(128, 255, 212));
-}
+
     
 
     
@@ -75,8 +74,8 @@
     <nav class="navbar">
       <ul >
         <li class="listado3"><a class ="marcado" href="Principal-TiendaJuegosGrupo5.html"> Descubrir</a></li>
-        <li class="listado3"><a href="Explorar.html"> Explorar</a></li>
-        <li class="listado3"><a href="noticias.html"> Noticias</a></li>
+        <li class="listado3"><a class ="marcado" href="Explorar.html"> Explorar</a></li>
+        <li class="listado3"><a class ="marcado"href="noticias.html"> Noticias</a></li>
       </ul>
     </nav>
     </div>
@@ -87,13 +86,13 @@
     <div class="contenedor">
     <div class="carrusel" id="Micarrusel">
       <div class="imagenes">
-      <img src="imagenes/hl2.jpg" alt="Dead Island 2">
+      <img src="imagenes/hl2.jpg" alt="Hogwarts Legacy">
     </div>
     <div class="imagenes">
-      <img src="imagenes/awpt.jpg" alt="Dead Island 2" >
+      <img src="imagenes/awpt.jpg" alt="Alan Wake" >
     </div>
       <div class="imagenes">
-        <img src="imagenes/hl2.jpg" alt="Dead Island 2">
+        <img src="imagenes/portaplgrq.jpg" alt="A Plague Tale Requiem">
       </div>
      
 <!--   <div class="imagenes">
@@ -109,14 +108,15 @@
 <div class ="list">
     
   <div class="dtimg"> <img src="imagenes/aw2.jpg" alt="A" width="50" height="60">
-    <h5 class="dtimg"> Alan Wake 2</h5>
+    <h5 > Alan Wake 2</h5>
 </div>
+
 <div class="dtimg"> <img src="imagenes/rtm2.jpg" alt="b" width="50" height="60">
-  <h5 class="dtimg">  Return to Moria </h5></div>
+  <h5>  Return to Moria </h5></div>
   <div class="dtimg"> <img src="imagenes/gtr2.jpg" alt="c" width="50" height="60">
-    <h5 class="dtimg"> Ghostrunner 2</h5></div>
+    <h5 > Ghostrunner 2</h5></div>
     <div class="dtimg"> <img src="imagenes/hl2.jpg" alt="d" width="50" height="60">
-      <h5 class="dtimg"> Hogwarts Legacy</h5> </div>
+      <h5 > Hogwarts Legacy</h5> </div>
     
   </div>
 </div >
@@ -128,7 +128,7 @@
 <div class="contendest">
 <div class="contenedorJD">
         <div class="frame prmfram">
-          <img class ="rdimg list" src="imagenes/ACMG.jpg" alt="ACMG" width="270" height="370"> 
+          <img class ="rdimg" src="imagenes/ACMG.jpg" alt="ACMG" width="280" height="370"> 
 
           <h5> Juego Base </h5>
           <h3> Assassin’s Creed Mirage </h3>
@@ -150,7 +150,7 @@
         </div>
         </div>
         <div class="frame">
-           <img class ="rdimg" src="imagenes/tew.jpg" alt="The Evil Within" width="270" height="370"> 
+           <img class ="rdimg" src="imagenes/tew.jpg" alt="The Evil Within" width="280" height="370"> 
 
           <h5> Juego Base </h5>
           <h3> The Evil Within </h3>
@@ -162,7 +162,7 @@
           
         </div>
         <div class="frame">
-           <img class ="rdimg" src="imagenes/tew2.jpg" alt="The Evil Within 2" width="260" height="370"> 
+           <img class ="rdimg" src="imagenes/tew2.jpg" alt="The Evil Within 2" width="280" height="370"> 
 
           <h5> Juego Base </h5>
           <h3> The Evil Within 2 </h3>
@@ -174,7 +174,7 @@
         </div>
 
         <div class="frame">
-          <img class ="rdimg" src="imagenes/apltrq.jpg" alt="A Plague Tale: Requiem" width="260" height="370"> 
+          <img class ="rdimg" src="imagenes/apltrq.jpg" alt="A Plague Tale: Requiem" width="280" height="370"> 
 
          <h5> Juego Base </h5>
          <h3> A Plague Tale: Requiem </h3>
@@ -186,7 +186,7 @@
        </div>
 
        <div class="frame">
-        <img class ="rdimg" src="imagenes/apltinoc.jpg" alt="A Plague Tale Innocence" width="260" height="370"> 
+        <img class ="rdimg" src="imagenes/apltinoc.jpg" alt="A Plague Tale Innocence" width="280" height="370"> 
 
        <h5> Juego Base </h5>
        <h3> A Plague Tale Innocence</h3>
@@ -204,23 +204,46 @@
 
       </div>
     </div>
-
-    <div class="divpromo">
+<div id="ofertas">
+  <a href="">
+      
+  </a>
 <div class="contpromo"> <!--contendor promo-->
 <div class="imgcont">
-   <img class ="rdimg" src="imagenes/oferta.jpg" alt="Oferta" width="370" height="270"> 
+   <img class ="imgpromo" src="imagenes/oferta.jpg" alt="Oferta" width="370" height="270"> 
 
   <div class="textcont"> 
 <h4>Ofertas y Promociones</h4>
 <h5>Disfruta de nuestras ofertas y promociones</h5>
   </div>
   <div>
-    <a href=" " >Explorar </a>
+    
   </div>
 </div>
 
 </div>
+
+<div class="contpromo"> <!--contendor promo-->
+  <div class="imgcont">
+     <img class ="imgpromo" src="imagenes/prom2.jpg" alt="Oferta" width="370" height="270"> 
+  
+    <div class="textcont"> 
+  <h4>Ofertas y Promociones</h4>
+  <h5>Disfruta de nuestras ofertas y promociones</h5>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+  
+  </div>
+
+
+
 </div>
+
+
+
 
 
 </div>
