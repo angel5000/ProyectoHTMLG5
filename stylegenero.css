@@ -150,6 +150,6 @@ span.pa{
     margin-left: 5px; 
     cursor: pointer;
 }
-
-
-
+.filtro{
+   display: none;/*ocultar*/
+}
