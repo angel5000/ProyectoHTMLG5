@@ -1,8 +1,8 @@
 body{
-    background-color: #121212;
+    background-color: #000000;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(rgb(0, 0, 0), rgba(112, 81, 238, 0.397));
-
+  
+    background: linear-gradient(rgb(22, 22, 22), rgba(85, 58, 182, 0.712));
 }
 div h1{
     font-size: 14px;
