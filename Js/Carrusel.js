@@ -1,24 +1,13 @@
 
-const carrusel = document.getElementById('Micarrusel');
-let intervalo = null;
-const tiempoEntreImágenes = 5000; // 3000 milisegundos = 3 segundos
 
-const start = () => {
-  intervalo = setInterval(function () {
-    carrusel.scrollLeft += 40;
+const imgs =document.querySelector(".imagenes");
+let contenedor = documento.querySelector(".carrusel");
+let imgultima =contenedor[contenedor.length-1];
+imgs.insertAdjacentElement('afterbegin',imgultima);
 
-    if (carrusel.scrollLeft >= carrusel.scrollWidth - carrusel.clientWidth) {
-      carrusel.scrollLeft = 300;
-      clearInterval(intervalo); // Detenemos el intervalo
-      setTimeout(() => {
-        start(); // Reiniciamos el carrusel después de un tiempo determinado
-      }, tiempoEntreImágenes);
-    }
-  }, 40);
-};
-
-start();
-
+function sgt(){
+  
+}
 
 /*const carrusel = document.getElementById('Micarrusel');
 let intervalo=null;
