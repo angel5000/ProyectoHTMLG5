@@ -45,14 +45,15 @@
 
 .carrusel{
   display: flex; 
-  width: 100%;
+ 
   border-radius: 20px; 
   overflow-x: scroll;
   scroll-snap-type: mandatory;
-  padding-bottom: 10px;
+padding-bottom: 20px;
  min-width: 650px;
  max-width: 650px;
-  width: 650px;
+ 
+  border:3px solid rgb(194, 182, 241);
 }
 
 .imagenes{
@@ -62,6 +63,9 @@
     scroll-snap-align: center;
     float: left;
     object-fit: cover;
+    margin-top: 10px;
+    border-radius: 20px;
+   
    
 }
 img{
@@ -105,12 +109,15 @@ img{
 
 .conjconten{
 
-    padding-left: 100px ;
-    padding-bottom: 150px; 
+    padding-left: 50px ;
+    padding-top: 0px;
+    padding-bottom: 10px; 
     justify-content: center;  
-    margin: 0 auto -100px;
-     background-color: #000000; 
-     border-radius: 20px; 
+    margin: 0 auto -10px;
+     background-color: #161515; 
+   border-radius: 50px;
+
+     border:3px solid rgb(194, 182, 241);
      width: 800px;
 
 
@@ -130,14 +137,14 @@ img{
   
   margin: 0px auto 90px;
     vertical-align:bottom;
-
+margin-top: 100px ;
     display: flex; 
     
   padding-left: 1px;
     overflow-x: scroll;
     scroll-snap-type: mandatory;
  
-     background-color: #000000; 
+     background-color: #926868; 
     
 }
 .contenedorJD{
