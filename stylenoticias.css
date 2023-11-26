@@ -2,6 +2,8 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
+  background-color: rgb(18, 18, 18); /* Fondo oscuro para la página */
+  color: #f0f0f0; /* Color de texto predeterminado */
 }
 
 /* Estilos para encabezado y pie de página */
@@ -20,7 +22,7 @@ nav {
 }
 
 nav a {
-  color: #ffffff;
+  color: #f1ecec;
   text-decoration: none;
   margin: 0 10px;
 }
@@ -28,7 +30,7 @@ nav a {
 /* Estilos para el contenedor de noticias */
 .noticias-container {
   display: flex;
-  flex-wrap: wrap; /* Ajuste para que las noticias se ajusten al cambiar las dimensiones de la pantalla */
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -38,8 +40,8 @@ nav a {
   margin: 10px 0;
   padding: 20px;
   border-radius: 10px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
+  background-color: #363636; /* Fondo oscuro para noticias y formulario */
+  border: 1px solid #4d4d4d; /* Borde más claro */
 }
 
 /* Estilos para el título principal */
@@ -56,7 +58,7 @@ nav a {
 /* Estilos específicos para las noticias */
 section.noticia {
   background-color: #343a40;
-  color: #ffffff;
+  color: #fcf6f6;
 }
 
 /* Estilos para el título de la noticia */
@@ -71,8 +73,9 @@ section.noticia {
 
 /* Estilos para las imágenes de las noticias */
 .noticia-img {
-  max-width: 100%;
-  height: auto;
+  width: 300px; /* Tamaño fijo para el ancho de las imágenes */
+  height: 200px; /* Tamaño fijo para la altura de las imágenes */
+  object-fit: cover; /* Ajuste para cubrir el tamaño especificado sin deformar la imagen */
   border-radius: 5px;
   transition: transform 0.2s;
   display: block;
@@ -93,6 +96,42 @@ footer {
 #formulario {
   max-width: 600px;
   margin: 0 auto;
+  background-color: #363636; /* Fondo más oscuro para el formulario */
+  border: 1px solid #4d4d4d; /* Borde más claro */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Estilos para el título del formulario */
+#formulario h2 {
+  text-align: center;
+  color: #00243D; /* Cambio de color del título del formulario a oscuro */
+}
+
+/* Estilos para los elementos del formulario */
+.formulario-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  background-color: #363636; /* Fondo más oscuro para los campos de formulario */
+  color: #ffffff; /* Color blanco para el texto en los campos de formulario */
+  border: 1px solid #4d4d4d; /* Borde más claro */
+}
+
+.formulario-submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #1acb55; /* Color llamativo para el botón de envío del formulario */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos específicos para las letras que solicitaste en el formulario */
+#formulario label {
+  color: #00243D; /* Color oscuro para las letras del formulario */
 }
 
 /* Estilos para los enlaces del pie de página */
@@ -100,9 +139,4 @@ footer a {
   color: #ffffff;
   text-decoration: none;
   margin: 0 10px;
-}
-
-/* Estilos específicos para el género de la noticia */
-.genero-noticia {
-  color: #a9a9a9;
 }
