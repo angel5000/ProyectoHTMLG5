@@ -2,6 +2,8 @@
 body{
 
     background-color: black;
+  
+    background: linear-gradient(rgb(0, 0, 0), rgba(120, 92, 231, 0.76));
       
     }
 a{
@@ -19,6 +21,9 @@ a{
     width: 360px;
     height: 700px;
     border-radius: 30px;
+    border:2px solid rgba(22, 21, 26, 0.568);
+    background: linear-gradient(rgb(0, 0, 0), rgba(139, 113, 243, 0.514));
+      
    
 }
 
