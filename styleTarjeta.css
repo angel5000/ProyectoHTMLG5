@@ -262,7 +262,9 @@ body {
 	position: relative;
 }
 
-
+.formulario-tarjeta select {
+	appearance: none;
+}
 
 
 .formulario-tarjeta .grupo-select i {

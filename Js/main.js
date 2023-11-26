@@ -20,6 +20,7 @@ const mostrarFrente = () => {
 // * Rotacion de la tarjeta
 tarjeta.addEventListener('click', () => {
 	tarjeta.classList.toggle('active');
+	
 });
 
 // * Boton de abrir formulario
