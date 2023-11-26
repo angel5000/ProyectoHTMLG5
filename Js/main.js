@@ -70,12 +70,12 @@ formulario.inputNumero.addEventListener('keyup', (e) => {
 	if(valorInput[0] == 4){
 		logoMarca.innerHTML = '';
 		const imagen = document.createElement('img');
-		imagen.src = 'img/logos/visa.png';
+		imagen.src = 'imagenes/Visa.png';
 		logoMarca.appendChild(imagen);
 	} else if(valorInput[0] == 5){
 		logoMarca.innerHTML = '';
 		const imagen = document.createElement('img');
-		imagen.src = 'img/logos/mastercard.png';
+		imagen.src = 'imagenes/Mastercard.png';
 		logoMarca.appendChild(imagen);
 	}
 
@@ -92,7 +92,7 @@ formulario.inputNombre.addEventListener('keyup', (e) => {
 	firma.textContent = valorInput;
 
 	if(valorInput == ''){
-		nombreTarjeta.textContent = 'Jhon Doe';
+		nombreTarjeta.textContent = '';
 	}
 
 	mostrarFrente();
