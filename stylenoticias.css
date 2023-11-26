@@ -4,6 +4,8 @@ body {
   margin: 0;
   background-color: rgb(18, 18, 18); /* Fondo oscuro para la página */
   color: #f0f0f0; /* Color de texto predeterminado */
+  border:1px solid rgb(194, 182, 241,0.5);
+  background: linear-gradient(rgb(0, 0, 0), rgb(194, 182, 241,0.4));
 }
 
 /* Estilos para encabezado y pie de página */
@@ -13,7 +15,8 @@ header, footer {
 
 /* Estilos específicos para el encabezado */
 header {
-  background-color: #373838;
+  border:1px solid rgb(194, 182, 241,0.5);
+  background: linear-gradient(rgb(0, 0, 0), rgb(194, 182, 241,0.4));
 }
 
 /* Estilos para la barra de navegación */
@@ -32,6 +35,8 @@ nav a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  border:1px solid rgb(194, 182, 241,0.5);
+  background: linear-gradient(rgb(0, 0, 0), rgb(194, 182, 241,0.4));
 }
 
 /* Estilos comunes para las noticias y el formulario */
@@ -40,8 +45,9 @@ nav a {
   margin: 10px 0;
   padding: 20px;
   border-radius: 10px;
-  background-color: #363636; /* Fondo oscuro para noticias y formulario */
-  border: 1px solid #4d4d4d; /* Borde más claro */
+
+  border:1px solid rgb(194, 182, 241,0.5);
+  background: linear-gradient(rgb(0, 0, 0), rgb(194, 182, 241,0.4));
 }
 
 /* Estilos para el título principal */
@@ -57,8 +63,10 @@ nav a {
 
 /* Estilos específicos para las noticias */
 section.noticia {
-  background-color: #343a40;
+ 
   color: #fcf6f6;
+  border:1px solid rgb(194, 182, 241,0.5);
+  background: linear-gradient(rgb(0, 0, 0), rgb(194, 182, 241,0.4));
 }
 
 /* Estilos para el título de la noticia */
@@ -100,12 +108,14 @@ footer {
   border: 1px solid #4d4d4d; /* Borde más claro */
   padding: 20px;
   border-radius: 10px;
+  border:1px solid rgb(194, 182, 241,0.5);
+  background: linear-gradient(rgb(102, 99, 99), rgba(103, 74, 221, 0.603));
 }
 
 /* Estilos para el título del formulario */
 #formulario h2 {
   text-align: center;
-  color: #00243D; /* Cambio de color del título del formulario a oscuro */
+  color: #fcfeff; /* Cambio de color del título del formulario a oscuro */
 }
 
 /* Estilos para los elementos del formulario */
@@ -114,9 +124,9 @@ footer {
   padding: 8px;
   margin-bottom: 10px;
   box-sizing: border-box;
-  background-color: #363636; /* Fondo más oscuro para los campos de formulario */
-  color: #ffffff; /* Color blanco para el texto en los campos de formulario */
-  border: 1px solid #4d4d4d; /* Borde más claro */
+  color: #ffffff; 
+  border:1px solid rgb(194, 182, 241,0.5);
+  background: linear-gradient(rgb(0, 0, 0), rgba(81, 56, 182, 0.219));
 }
 
 .formulario-submit {
