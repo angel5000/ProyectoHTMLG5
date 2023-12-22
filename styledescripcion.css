@@ -1,3 +1,4 @@
+
 body{
     background-color: #121212;
     font-family: 'Roboto', sans-serif;
@@ -59,20 +60,21 @@ img{
  
     border-radius: 50px;
 }
+
 #contenedorimg2{
- float: right;
-    margin-top: 240px;
-    padding-top: 40px;
-    border-bottom: 10px;
-    padding-bottom: 10px;
-    margin-right: 100px;
-
-    background: linear-gradient(rgb(0, 0, 0), rgba(63, 47, 134, 0.1));
-    border-radius: 10px;
-
-    border:2px solid rgb(194, 182, 241);
-}
-
+    float: right;
+       margin-top: 240px;
+       padding-top: 40px;
+       border-bottom: 10px;
+       padding-bottom: 10px;
+       margin-right: 100px;
+   
+       background: linear-gradient(rgb(0, 0, 0), rgba(63, 47, 134, 0.1));
+       border-radius: 10px;
+  
+       border:2px solid rgb(194, 182, 241);
+    
+   }
 div#contenedorvideo{
     float: left;
     width: 930px;
