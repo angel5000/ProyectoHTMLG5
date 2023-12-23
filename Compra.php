@@ -4,3 +4,8 @@
         require_once '../PHPGRUPO5/Descripcion.html';
      
         ?>
+<?php
+require_once '../Taller2/Conexion.php'; 
+
+
+?>
