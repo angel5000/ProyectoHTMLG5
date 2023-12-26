@@ -1,7 +1,7 @@
 <?php
  session_start();
    require_once '../PHPGRUPO5/plantillas/Conexion.php';
- $sql = "select rol from RolesUsuarios where idUsuario =1";
+ $sql = "select rol from RolesClientes where idRolUsu =5";
  $data = array();
  $stmt = $pdo->prepare($sql);// preparar la sentencia
  $stmt->execute($data);

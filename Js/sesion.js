@@ -1,4 +1,4 @@
-var botonlog=document.getElementById('btlog');
+/*var botonlog=document.getElementById('btlog');
 
 botonlog.addEventListener('click',function(){
     var txtcorreo=document.getElementById('camplog').value;
@@ -14,4 +14,4 @@ botonlog.addEventListener('click',function(){
                 else{
                     alert("Correo no valido");}
 
-});
+});*/

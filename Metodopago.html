@@ -70,11 +70,12 @@
 <body>
 
   <div class="payment-container">
-    <a href="Principal-TiendaJuegosGrupo5.html">Ir a Principal</a>
+    <form action="Compra.php" method="post">
+    <a href="index.html">Ir a Principal</a>
     <h2>Selecciona tu Método de Pago</h2>
 
     <div class="payment-method">
-      <input type="radio" id="tarjeta" name="payment" >
+      <input type="radio" id="tarjeta" name="payment" checked>
       <label for="tarjeta">Tarjeta de Crédito/Débito</label>
     </div>
 
@@ -83,9 +84,9 @@
       <label for="paypal">PayPal</label>
     </div>
 
-    <button class="btn-pay" id="btpagar" >Pagar</button>
+    <input type="submit" class="btn-pay" id="btpagar" >Pagar</button>
   </div>
-
+</form>
   <script src="/Js/MetodPago.js"> </script>
 </body>
 </html>

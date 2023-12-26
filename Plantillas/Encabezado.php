@@ -29,13 +29,15 @@
         }
         
         ?>
+        <a   
+       href="<?php echo $path ?>../PHPGRUPO5/index.html">Index| </a>
        <a   
        href="<?php echo $path ?>../PHPGRUPO5/Cliente.php">Cliente | </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Compra | </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Venta | </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Administrador | | </a> 
        
-        <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >PRUEBA CLIENTE |</a>
+        <a href="<?php echo $path ?>../PHPGRUPO5/Pruebas.php" >PRUEBA CLIENTE |</a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >PRUEBA AFILIADO |</a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >PRUEBA ADMINISTRADOR |</a>
     </nav>
