@@ -30,7 +30,7 @@
         
         ?>
         <a   
-       href="<?php echo $path ?>../PHPGRUPO5/index.html">Index| </a>
+       href="/PHPGRUPO5/index.php">Index| </a>
        <a   
        href="<?php echo $path ?>../PHPGRUPO5/Cliente.php">Cliente | </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Compra | </a>

@@ -1,3 +1,40 @@
+<?php
+//$temaAlmacenado = $_COOKIE['tema'] ?? 'claro';
+///
+
+
+if (isset($_COOKIE['temaSeleccionado'])) {
+    // Obtén la preferencia de tema de la cookie
+    $preferenciaTema = $_COOKIE['temaSeleccionado'];
+if($preferenciaTema ="Claro"){
+    echo '<style> body {
+            color: #fff; 
+            background: linear-gradient(rgb(214, 209, 209), rgba(139, 121, 212, 0.3));
+       max-width: 1340px;
+           }</style>';
+        }
+if($preferenciaTema ="Obscuro"){
+    echo '<style> 
+    body {
+     
+        color: #fff; 
+       
+       background: linear-gradient(rgb(22, 22, 22), rgba(109, 87, 196, 0.3));
+   max-width: 1340px;
+       }</style>';
+   
+}
+   
+   
+} else {
+    echo "No se encontró una preferencia de tema.";
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,22 +45,24 @@
 
 
   <style>
-   
+   <?php
+        // Aplica estilos específicos según la preferencia de tema almacenada
+       // if ($temaAlmacenado === 'oscuro') {
+        //    cho ' body {
+           //     color: #fff; 
+           //    background: linear-gradient(rgb(22, 22, 22), rgba(109, 87, 196, 0.3));
+        //  max-width: 1340px;
+          //    }';
+       // }else{
+
+        //}
+        ?>
     html {
 
      background-color: #020303;
      
     }
-    body {
-     
-      color: #fff; 
-     
-     
     
-     background: linear-gradient(rgb(22, 22, 22), rgba(109, 87, 196, 0.3));
-max-width: 1340px;
-    }
-
         a {
           text-decoration: none;
       color: #fff
@@ -69,24 +108,64 @@ max-width: 1340px;
         <li class="listado2"><a href="Distribucion.html"> Distribucion</a></li>
         <li class="listado2"><a href="Asistencia.html"> Asistencia</a></li>
         <li class="listado2"><a href="Login.html"> Iniciar sesion</a></li>
-        <li class="listado2" style="margin-left: 350px; margin-right: 0px;"><a href="Login.html"> Visitante</a></li>
-        <li class="cart" style="margin-left: 350px; margin-right: 0px;"><a href="#"> Carrito  
-          <span class="cart-count">0</span></a>
-          <div class="cart-dropdown">
-            <div>item 1</div>
-        </div>
+        <li class="listado2" style="margin-left: 300px; margin-right: 0px; "><a href="Login.html"> Visitante</a></li>
+       
+        <li class="listado2" style="margin-left: 10px; margin-right: 10px; ">
+       
+     
+        <button style="padding-left: 10px; padding-right: 10px;
+        padding-top: 1px;
+        border:1px solid rgb(194, 182, 241);
+        background: linear-gradient(rgb(0, 0, 0), rgb(194, 182, 241,0.4));
+        " class="navbar-burger" onclick="toggleMenu()">
+       <span style="color: #fff;">Configuraciones</span>
+</button>
+<div class="menu">
+<span style="color: #fff;  font-size: 25px;">Configuraciones</span>
+<nav class="nav">
+<a class="a"  style="animation-delay: 0.25" href="/PHPGRUPO5/Configuraciones.php"
+>Seleccionar Temas
+ 
+</a>
+</nav>
+</div>
+<script type="text/javascript">
+const toggleMenu = () =>
+document.body.classList.toggle("open");
+</script>
+
+        <?php
+    
+// Obtén la preferencia de tema (puedes obtenerla de una solicitud POST o GET)
+//$preferenciaTema = $_POST['tema'] ?? $_GET['tema'] ?? 'claro';
+
+// Establece la cookie con una duración de 365 días (puedes ajustar la duración según tus necesidades)
+//setcookie('tema', $preferenciaTema, time() + (365 * 24 * 60 * 60), '/');
+
+
+//header('Location: index.php');
+//?>
         
+    </select>
+        
+
         </li>
+       
+ 
+
       </ul>
     </nav>
   </div>
   
   <div >
     
+  
+
     
     <div class="divnav">
     <nav class="navbar">
       <ul >
+
         <li class="listado3"><a class ="marcado" href="Principal-TiendaJuegosGrupo5.html"> Descubrir</a></li>
         <li class="listado3"><a class ="marcado" href="Explorar.html"> Explorar</a></li>
         <li class="listado3"><a class ="marcado"href="noticias.html"> Noticias</a></li>
@@ -278,7 +357,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   cartLink.addEventListener('click', function() {
       cartDropdown.classList.toggle('show');
-      
+      <span class="cart-count"><?php echo $totalcantidad; ?>ghj</span>
+      alert("sdfs");
   });
 });
 </script>
