@@ -1,36 +1,48 @@
 <?php
-//$temaAlmacenado = $_COOKIE['tema'] ?? 'claro';
-///
+     
+session_start();
 
 
-if (isset($_COOKIE['temaSeleccionado'])) {
+if (isset($_COOKIE['temaSeleccionado'])&&isset($_COOKIE['temaSeleccionado'])) {
     // Obtén la preferencia de tema de la cookie
     $preferenciaTema = $_COOKIE['temaSeleccionado'];
-if($preferenciaTema ="Claro"){
+if($preferenciaTema =="Claro"){
     echo '<style> body {
             color: #fff; 
             background: linear-gradient(rgb(214, 209, 209), rgba(139, 121, 212, 0.3));
        max-width: 1340px;
            }</style>';
+          
+         
         }
-if($preferenciaTema ="Obscuro"){
-    echo '<style> 
-    body {
-     
-        color: #fff; 
-       
-       background: linear-gradient(rgb(22, 22, 22), rgba(109, 87, 196, 0.3));
-   max-width: 1340px;
-       }</style>';
-   
-}
+        if($preferenciaTema =="Obscuro"){
+          echo '
+          <style> 
+          body {
+           
+              color: #fff; 
+             
+             background: linear-gradient(rgb(22, 22, 22), rgba(109, 87, 196, 0.3));
+         max-width: 1340px;
+             }</style>';
+             
+         
+        }
    
    
 } else {
     echo "No se encontró una preferencia de tema.";
 }
 
+if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === 'true'){
 
+  $logeo="Cerrar Sesion";
+  $Nombres = isset($_SESSION['Nombres']) ? $_SESSION['Nombres'] : "Visitante";
+}else{
+  $logeo="Iniciar Sesion";
+  $Nombres ="Visitante";
+}
+include_once '../PHPGRUPO5/plantillas/Encabezado.php';
 ?>
 
 
@@ -107,12 +119,16 @@ if($preferenciaTema ="Obscuro"){
         
         <li class="listado2"><a href="Distribucion.html"> Distribucion</a></li>
         <li class="listado2"><a href="Asistencia.html"> Asistencia</a></li>
-        <li class="listado2"><a href="Login.html"> Iniciar sesion</a></li>
-        <li class="listado2" style="margin-left: 300px; margin-right: 0px; "><a href="Login.html"> Visitante</a></li>
+        <li class="listado2"><a href="Login.html"> <?php
+       echo $logeo?></a></li>
+        <li class="listado2" style="margin-left: 300px; margin-right: 0px; "></li>
        
         <li class="listado2" style="margin-left: 10px; margin-right: 10px; ">
        
-     
+        <span>
+        <?php
+       
+        echo $Nombres;?></span>
         <button style="padding-left: 10px; padding-right: 10px;
         padding-top: 1px;
         border:1px solid rgb(194, 182, 241);

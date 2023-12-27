@@ -7,7 +7,7 @@
      
         
     }
-    nav{
+    #ennav{
        
         background-color: #121212;
     }
@@ -21,7 +21,7 @@
         <?php echo isset($titulo)?$titulo:"LISTA DE ENLACES";  ?>
     </h3>
 
-    <nav>
+    <nav id="ennav">
         <?php
         $path="";
         if($_SERVER['PHP_SELF']!="/Encabezado.php"){
@@ -32,8 +32,8 @@
         <a   
        href="/PHPGRUPO5/index.php">Index| </a>
        <a   
-       href="<?php echo $path ?>../PHPGRUPO5/Cliente.php">Cliente | </a>
-        <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Compra | </a>
+       href="<?php echo $path ?>../PHPGRUPO5/Cliente.php">Usuarios | </a>
+        <a href="<?php echo $path ?>../PHPGRUPO5/Descripcion.html" >Compra | </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Venta | </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Administrador | | </a> 
        
@@ -41,7 +41,5 @@
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >PRUEBA AFILIADO |</a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >PRUEBA ADMINISTRADOR |</a>
     </nav>
-    </nav>
-    </nav>
-    </nav>
+   
 </div>
