@@ -1,7 +1,4 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 include ("plantillas/Conect.php");
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
@@ -12,7 +9,9 @@ $HashedContrasena = $_POST['password'];
     $Activa = "A";
 $consulta="CALL InsertarClienteUsuario('$nombre', '$apellido', '$email', '$NombUsuario', '$Activa', '$HashedContrasena')";
 $_resultado = mysqli_query($conexion, $consulta);
-
+sleep(1);
+header('Location: registroUsu.html');
+exit;
 
 
 ?>
