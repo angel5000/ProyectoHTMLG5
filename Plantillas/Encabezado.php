@@ -11,11 +11,11 @@
        
         background-color: #121212;
     }
-    h5{
+    h3{
         color: #fff;
     }
 </style>
-<div style="margin-bottom: 20px">
+<div style="margin-bottom: 20px; margin-top: 20px;">
 
     <h3>
         <?php echo isset($titulo)?$titulo:"LISTA DE ENLACES";  ?>
@@ -31,13 +31,11 @@
         ?>
         <a   
        href="/PHPGRUPO5/index.php">Index| </a>
-       <a   
-       href="<?php echo $path ?>../PHPGRUPO5/Cliente.php">Usuarios | </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Descripcion.html" >Compra | </a>
-        <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Venta | </a>
-        <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Administrador | | </a> 
+        <a href="<?php echo $path ?>../PHPGRUPO5/Venta.php" >Venta | </a>
+        <a href="<?php echo $path ?>../PHPGRUPO5/LoginAdmin.php" >Administrador | | </a> 
        
-        <a href="<?php echo $path ?>../PHPGRUPO5/Pruebas.php" >PRUEBA CLIENTE |</a>
+        <a href="<?php echo $path ?>../PHPGRUPO5/Pruebas.php" >PRUEBA USUARIOS |</a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >PRUEBA AFILIADO |</a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >PRUEBA ADMINISTRADOR |</a>
     </nav>

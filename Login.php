@@ -1,28 +1,84 @@
 <?php
+//autor: Angel Vergara Paredes
  session_start();
+
 ?>
+<?php
+if(isset($_SESSION['SESION'])&&$_SESSION['SESION']==0){
+
+    ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <meta name="autor" content="Vergara Paredes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link href="EstiloLogin.css" rel="stylesheet" >
+
+    </head>
+<body>
+
+    <form  method="post">
+    <div class="panlogin" >
+        
+        <div class="logo" >
+            <figure> <img src="imagenes/logo.png" alt="Logo" width="80" height="65"> </figure>
+            </div>
+        <h4 style="font-family: 'Times New Roman', Times, serif; color: azure;">Inicio de Sesion</h4> 
+        <div class="textlog" >
+
+            <h4 style="font-family: 'Times New Roman', Times, serif; color: azure;">Inicia Sesion o Registrate</h4> 
+       
+        </div>
+        <div class="dvtext">
+
+            <input type="text" id="camplog" name="txtusuario" placeholder="Ingrese su usuario"> 
+        </div>
+        <div class="dvtext2">
+
+            <input type="password" id="camplog2" name="txtcontra" placeholder="Ingrese su contraseña"> 
+        </div>
+        <div class="dvboton">
+
+
+            <input type="submit" id="btlog"  value="Ingresar"> 
+        
+        </div>
+        <div class="dvreg">
+<h4 style="font-family: 'Times New Roman', Times, serif; color: azure;">No tienes cuenta?</h4>
+            <a href="registro.php"> Registrate aqui</a>
+        </div>
+    </form>
+    </div>
+
+    
+    <textarea id="h-captcha-response-0gw74a5cvacg" name="h-captcha-response" style="display: none;"></textarea>
+
+
+
+
+</body> 
+
+    
+    </html>
+
+  
+
+
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recuperar valores del formulario
-    $usuario = $_POST["txtcorreo"];
+    
+    $usuario = $_POST["txtusuario"];
     $contrasenaIngresada = $_POST["txtcontra"];
-    $_resultado = 0;
-    $_rstid=0;
-    $_Nombres="N/A";
-    // Ahora puedes utilizar $usuario y $contrasenaIngresada en tu lógica
+    $resultado = 0;
+    $rstid=0;
     echo "Usuario: " . $usuario . "<br>";
     echo "Contraseña Ingresada: " . $contrasenaIngresada;
-} else {
-    // Manejar el caso en que no se haya enviado el formulario
-    echo "El formulario no ha sido enviado.";
-    $_SESSION['Nombres']="Visitante";
-}
-?>
 
 
 
-<?php
 
    require_once '../PHPGRUPO5/plantillas/Conexion.php';
    $stmt = $pdo->prepare('CALL LoginUsuario(?, ?, @pResultado, @ids,@nombres,@apellidos)');
@@ -35,7 +91,7 @@ $stmt->closeCursor(); // Cerrar el conjunto de resultados anterior
 
 $stmt = $pdo->query("SELECT @pResultado AS Resultado, @ids AS id,@nombres AS Nombres,@apellidos AS Apellidos");
 $resultados = $stmt->fetch(PDO::FETCH_ASSOC);
-$_resultado = $resultados['Resultado'];
+$resultado = $resultados['Resultado'];
 $idUsuario = $resultados['id'];
 $_SESSION['Nombres']= $resultados['Nombres']." ".$resultados['Apellidos'];
 // Llamada al segundo procedimiento almacenado
@@ -48,39 +104,48 @@ $stmt = $pdo->prepare("CALL ObtenerRolAfiliado(:idrrolafi, @afRol)");
 $stmt->bindParam(':idrrolafi', $idUsuario, PDO::PARAM_INT);
 $stmt->execute();
 $stmt->closeCursor();
-// Obtener el valor del parámetro de salida del segundo procedimiento almacenado
 $stmt = $pdo->query("SELECT @pRol as pRol");
-$_rstid = $stmt->fetch(PDO::FETCH_ASSOC);
-$pRol = $_rstid['pRol'];
-
+$rstid = $stmt->fetch(PDO::FETCH_ASSOC);
+$pRol = $rstid['pRol'];
+$_SESSION['RolUsuario']= $pRol;
 $stmt = $pdo->query("SELECT@afRol as Rolaf");
-$_rstid = $stmt->fetch(PDO::FETCH_ASSOC);
-$pRolaf = $_rstid['Rolaf'];
+$rstid = $stmt->fetch(PDO::FETCH_ASSOC);
+$pRolaf = $rstid['Rolaf'];
+$_SESSION['RolAfiliado']= $pRolaf;
 echo $pRolaf." ".$pRol." ".$_SESSION['Nombres'];
   
-if($_resultado==1&&$pRol == 100 ||  $pRolaf == 103){
+if($resultado==1&&$pRol == 100 ||  $pRolaf == 103){
    
-        // Configurar una cookie para indicar que el usuario ha iniciado sesión
-        setcookie('usuario_autenticado', 'true', time() + 3600, '/');
-       //$redirect = isset($_SESSION['redirect']) ? $_SESSION['redirect'] : 'index.html';
        
+        setcookie('usuario_autenticado', 'true', time() + 3600, '/');
+      
        if(isset($_SESSION['a'])||!empty($_SESSION['a'])){
         $redirect=$_SESSION['a'];
-        header("Location: $redirect");die();
+        $_SESSION['SESION']=1;
+        header("Location: $redirect");
+        
        }else{
+        $_SESSION['SESION']=1;
         header("Location: index.php");
        }
+    
 }else{
-echo "error";
-echo $pRol." ".$_resultado;
-}/*if($_resultado==1){
-    $_redirect = isset($_GET['redirect'])? $_GET['redirect'] : 'index.html';
-            
-              
-                header("Location: $_redirect");
-                die();
+    echo '<script> alert("ERROR DE SESION REVISE SUS CREDENCIALES");</script>';
 }
-*/
+}
+} if(isset($_SESSION['SESION'])&&$_SESSION['SESION']==1&&isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === 'true'){
+    
+    $_SESSION['SESION']=0;
+    $_SESSION['RolAfiliado']=null;
+    $_SESSION['RolUsuario']=null;
+    $_SESSION['a']=null;
+    $resultado = 0;
+    $rstid=0;
+    setcookie('usuario_autenticado', 'true', time() - 3600, '/');
+    echo "<script> alert('SESION CERRADA');
+        window.location.href = 'index.php' </script>";
+   
+}
 
-  ?>
-
+?>
+  

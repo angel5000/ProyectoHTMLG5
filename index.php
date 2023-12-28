@@ -39,6 +39,7 @@ if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === '
   $logeo="Cerrar Sesion";
   $Nombres = isset($_SESSION['Nombres']) ? $_SESSION['Nombres'] : "Visitante";
 }else{
+  $_SESSION['SESION']=0;
   $logeo="Iniciar Sesion";
   $Nombres ="Visitante";
 }
@@ -119,7 +120,7 @@ include_once '../PHPGRUPO5/plantillas/Encabezado.php';
         
         <li class="listado2"><a href="Distribucion.html"> Distribucion</a></li>
         <li class="listado2"><a href="Asistencia.html"> Asistencia</a></li>
-        <li class="listado2"><a href="Login.html"> <?php
+        <li class="listado2"><a href="Login.php"> <?php
        echo $logeo?></a></li>
         <li class="listado2" style="margin-left: 300px; margin-right: 0px; "></li>
        
