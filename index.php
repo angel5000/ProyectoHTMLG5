@@ -125,7 +125,7 @@ include_once '../PHPGRUPO5/plantillas/Encabezado.php';
         
         <li class="listado2"><a href="Distribucion.html"> Distribucion</a></li>
         <li class="listado2"><a href="Asistencia.html"> Asistencia</a></li>
-        <li class="listado2"><a href=""style="margin-left: 30px; margin-right: 0px; "> <?php
+        <li class="listado2"><a href="Afiliado.php"style="margin-left: 30px; margin-right: 0px; "> <?php
        echo $afiliado?></a></li>
 <li class="listado2"><a href="Login.php"> <?php
        echo $logeo?></a></li>

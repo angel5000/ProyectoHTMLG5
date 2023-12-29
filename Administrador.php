@@ -79,7 +79,9 @@ th, td {
         padding-left:1px;
         padding-right:3px;
     }
-
+span{
+    color:#fff;
+}
 
 
     #resultado{
@@ -92,7 +94,11 @@ height:100px;
 </style>
 
     <body>
+        <div style="  border:2px solid rgb(66, 62, 82); 
+        margin-right=200px; padding-right=1px; 
+    max-width: 8%;">
     <a style="color: #fff" href="LoginAdmin.php"> Cerrar Sesion</a>
+    </div>
     <?php
         $titulo="ADMINISTRADOR";
         require_once '../PHPGRUPO5/plantillas/Conexion.php';
@@ -135,7 +141,12 @@ height:100px;
                             <td><?php echo $fila['apellido'] ?></td>
                             <td><?php echo $fila['email'] ?></td>
                             <td><?php echo $fila['fechaRegistro'] ?></td>
-                           
+                            <td>
+                                <a >Editar</a>
+                                </td>
+                                <td>
+                                <a >Eliminar</a>
+                            </td>
                         </tr>
                     <?php } ?>
                 </tbody>
@@ -177,7 +188,12 @@ height:100px;
                            <td><?php echo $fila['apellido'] ?></td>
                            <td><?php echo $fila['email'] ?></td>
                            <td><?php echo $fila['fechaRegistro'] ?></td>
-                          
+                           <td>
+                                <a >Editar</a>
+                                </td>
+                                <td>
+                                <a >Eliminar</a>
+                            </td>
                        </tr>
                    <?php } ?>
                </tbody>
@@ -220,7 +236,12 @@ height:100px;
                            <td><?php echo $fila['Provincia'] ?></td>
                            <td><?php echo $fila['Ciudad'] ?></td>
                            <td><?php echo $fila['idCliente'] ?></td>
-                          
+                           <td>
+                                <a >Editar</a>
+                                </td>
+                                <td>
+                                <a >Eliminar</a>
+                            </td>
                        </tr>
                    <?php } ?>
                </tbody>
@@ -264,6 +285,12 @@ height:100px;
                            <td><?php echo $fila['Activa'] ?></td>
                            <td id="salt"><?php echo $fila['Salt'] ?></td>
                            <td><?php echo $fila['HashedContrasena'] ?></td>
+                           <td>
+                                <a >Editar</a>
+                                </td>
+                                <td>
+                                <a >Eliminar</a>
+                            </td>
                        </tr>
                    <?php } ?>
                </tbody>
