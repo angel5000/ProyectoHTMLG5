@@ -1,10 +1,9 @@
 <?php
 //autor: Angel Vergara Paredes
- session_start();
 
 ?>
 <?php
-if(isset($_SESSION['SESION'])&&$_SESSION['SESION']==0){
+if(!isset($_COOKIE['usuario_autenticado'])){
 
     ?>
 <!DOCTYPE html>
@@ -69,7 +68,7 @@ if(isset($_SESSION['SESION'])&&$_SESSION['SESION']==0){
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+    session_start();
     $usuario = $_POST["txtusuario"];
     $contrasenaIngresada = $_POST["txtcontra"];
     $resultado = 0;
@@ -112,39 +111,43 @@ $stmt = $pdo->query("SELECT@afRol as Rolaf");
 $rstid = $stmt->fetch(PDO::FETCH_ASSOC);
 $pRolaf = $rstid['Rolaf'];
 $_SESSION['RolAfiliado']= $pRolaf;
-echo $pRolaf." ".$pRol." ".$_SESSION['Nombres'];
+//echo "id: ".$idUsuario."- ". $pRolaf." - ".$pRol." - ".$_SESSION['Nombres'];
   
 if($resultado==1&&$pRol == 100 ||  $pRolaf == 103){
    
        
         setcookie('usuario_autenticado', 'true', time() + 3600, '/');
       
-       if(isset($_SESSION['a'])||!empty($_SESSION['a'])){
-        $redirect=$_SESSION['a'];
-        $_SESSION['SESION']=1;
-        header("Location: $redirect");
         
-       }else{
-        $_SESSION['SESION']=1;
         header("Location: index.php");
-       }
+     
+       
+       
     
 }else{
     echo '<script> alert("ERROR DE SESION REVISE SUS CREDENCIALES");</script>';
-}
-}
-} if(isset($_SESSION['SESION'])&&$_SESSION['SESION']==1&&isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === 'true'){
+}if($resultado==1&&$pRol == 100&&$pRolaf == 103){
+    $_SESSION['Afiliado']="Afiliado";
     
-    $_SESSION['SESION']=0;
-    $_SESSION['RolAfiliado']=null;
-    $_SESSION['RolUsuario']=null;
+    }else{
+        $_SESSION['Afiliado']="";
+    }
+
+
+}
+} if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === 'true'){
+    
+
+    $_SESSION['RolAfiliado']=0;
+    $_SESSION['RolUsuario']=0;
     $_SESSION['a']=null;
     $resultado = 0;
     $rstid=0;
+    session_unset();
     setcookie('usuario_autenticado', 'true', time() - 3600, '/');
     echo "<script> alert('SESION CERRADA');
         window.location.href = 'index.php' </script>";
-   
+       
 }
 
 ?>

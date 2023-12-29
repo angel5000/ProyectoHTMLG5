@@ -5,7 +5,6 @@ if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === '
 (isset($_SESSION['RolUsuario']) && $_SESSION['RolUsuario'] == 100) ||
     (isset($_SESSION['RolAfiliado']) && $_SESSION['RolAfiliado'] == 103)){
 
-       
 
 ?>
 
@@ -82,12 +81,12 @@ if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === '
 <body>
 
   <div class="payment-container">
-    <form action="Compra.php" method="post">
+    <form action="Pagos.php" method="post">
     <a href="index.php">Ir a Principal</a>
     <h2>Selecciona tu Método de Pago</h2>
 
     <div class="payment-method">
-      <input type="radio" id="tarjeta" name="payment" checked>
+      <input type="radio" id="tarjeta" name="payment" checked value="Tarjeta">
       <label for="tarjeta">Tarjeta de Crédito/Débito</label>
     </div>
 
@@ -107,5 +106,18 @@ if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === '
     } else {
         echo "ACCESO DENEGADO NO HA INICIADO SESIÓN";
     }
-   
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+     
+      if(isset($_POST["tarjeta"])){
+        $Tpago= $_POST["tarjeta"];
+if($Tpago=="tarjeta"){
+header("Location: Pagos.php");
+}
+      }
+
+      
+
+
+    }
     ?>
+

@@ -7,7 +7,7 @@ session_start();
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 <div>
   <div></div>
-  <label for="login">SinUsuario</label>
+  <label for="login">Usuario Diferente</label>
 <input type="radio" name="login" checked =true value="ul" require>
 </div>
 <div>
@@ -19,13 +19,10 @@ session_start();
 <label for="Compra">|Opciones Pagina|</label><br><br>
 </div>
 <div>
-<label for="Compra">Compra Juegos</label>
-<input type="radio" name="Compra"  value="Cmpj" checked =true> 
+<label for="Compra">Afiliado</label>
+<input type="radio" name="afilia"  value="afi" checked =true> 
 </div>
-<div>
-<label for="Compra">Metodo de pago</label>
-<input type="radio" name="Compra"  value="Mp" > 
-</div>
+
 <div>
 <input type="submit" value="Enviar" id="enviar">
 </div>
@@ -33,16 +30,16 @@ session_start();
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (isset($_POST["login"])&&($_POST["Compra"])){
+  if (isset($_POST["login"])&&($_POST["afilia"])){
   
     $opcionSeleccionada = $_POST["login"];
-    $opcionSeleccionada2 = $_POST["Compra"];
-    if ($opcionSeleccionada == "lgi"&&$opcionSeleccionada2=="Cmpj") {
+    $opcionSeleccionada2 = $_POST["afilia"];
+    if ($opcionSeleccionada == "lgi"&&$opcionSeleccionada2=="afi") {
 
      
-      conectar();
+        conectar("Usuario1","123456");
 
-      header('Location: Compra.php');
+      header('Location: Afiliado.php');
  
      echo $opcionSeleccionada2." g2".$opcionSeleccionada;
     
@@ -52,36 +49,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       setcookie('usuario_autenticado', 'true', time() - 3600, '/');
       
       }
-      header('Location: Compra.php');
+      conectar("Usuario2","123456");
+      header('Location: Afiliado.php');
       echo $opcionSeleccionada2." g2".$opcionSeleccionada;
     }
     
 
 
-  if ($opcionSeleccionada == "lgi"&&$opcionSeleccionada2=="Mp") {
-    echo $opcionSeleccionada2." g".$opcionSeleccionada;
-     
-    conectar();
-   
-  }  if ($opcionSeleccionada == "ul"&&$opcionSeleccionada2=="Mp"){
-    if(isset($_COOKIE['usuario_autenticado'])){
-    setcookie('usuario_autenticado', 'true', time() - 3600, '/');
   
-    }
-    header('Location: Venta.php');
- 
-  }
 
   
   } 
 
 }
-function conectar(){
+function conectar($usuario , $contrasenaIngresada ){
  
     
     
-  $usuario = "Usuario1";
-  $contrasenaIngresada = "123456";
+  $usuario ;
+  $contrasenaIngresada ;
   $_resultado = 0;
   $_rstid=0;
   $_Nombres="N/A";

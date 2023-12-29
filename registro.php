@@ -38,7 +38,7 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="pass" required>
 
                 <button type="submit" value="registerButton" class="boton" name="registerButton">Registrarse</button>
                
@@ -52,14 +52,17 @@
 
 
 <?php 
+require_once '../PHPGRUPO5/plantillas/Conexion.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   require_once '../PHPGRUPO5/plantillas/Conexion.php';
+   
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $email = $_POST['email'];
 $NombUsuario = $_POST['UserName'];
-$HashedContrasena = $_POST['password'];
+$HashedContrasena = $_POST['pass'];
     $Activa = "A";
+    echo $HashedContrasena." ".$NombUsuario ;
+
 
     $stmt = $pdo->prepare('CALL InsertarClienteUsuario(?, ?, ?, ?, ?, ? )');
 
@@ -67,8 +70,9 @@ $stmt->bindParam(1, $nombre, PDO::PARAM_STR);
 $stmt->bindParam(2, $apellido, PDO::PARAM_STR);
 $stmt->bindParam(3, $email , PDO::PARAM_STR);
 $stmt->bindParam(4, $NombUsuario, PDO::PARAM_STR);
-$stmt->bindParam(5, $HashedContrasena, PDO::PARAM_STR);
-$stmt->bindParam(6, $Activa, PDO::PARAM_STR);
+$stmt->bindParam(5, $Activa, PDO::PARAM_STR);
+$stmt->bindParam(6, $HashedContrasena, PDO::PARAM_STR);
+
 $stmt->execute();
 
 
@@ -78,6 +82,7 @@ alert('Usuario Registrado, Proceda a Iniciar Sesion');
  
         window.location.href = 'Login.php';
        
-</script> ";
+</script> ".$HashedContrasena;
 }
+
 ?>

@@ -1,18 +1,20 @@
 <?php
+//Rivas Vélez José Roberto
  session_start();
- $_SESSION['SESIONADM']=0;
+
 ?>
 <?php
 if(isset($_SESSION['SESIONADM'])&&$_SESSION['SESIONADM']==0){
 
     ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
     <meta name="autor" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login</title>
+  <title>LoginAdmin</title>
   <link href="EstiloLogin.css" rel="stylesheet" >
 <style>
 body{
@@ -47,11 +49,11 @@ background: linear-gradient(rgb(65, 64, 64), rgba(218, 216, 98, 0.76));
         </div>
         <div class="dvtext">
 
-            <input type="text" id="camplog" name="txtcorreo" placeholder="Ingrese su correo electronico"> 
+            <input type="text" id="camplog" name="txtusuario" placeholder="Ingrese su Usuario" require> 
         </div>
         <div class="dvtext2">
 
-            <input type="text" id="camplog2" name="txtcontra" placeholder="Ingrese su contraseña"> 
+            <input type="password" id="camplog2" name="txtcontra" placeholder="Ingrese su contraseña" require> 
         </div>
         <div class="dvboton">
 
@@ -81,7 +83,7 @@ background: linear-gradient(rgb(65, 64, 64), rgba(218, 216, 98, 0.76));
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar valores del formulario
-    $usuario = $_POST["txtcorreo"];
+    $usuario = $_POST["txtusuario"];
     $contrasenaIngresada = $_POST["txtcontra"];
     $resultado = 0;
     $rstid=0;
@@ -133,15 +135,19 @@ echo '<script> alert("ACCESO DENEGADO USUARIO NO AUTORIZADO");</script>';
 
 }
 }
-}if(isset($_SESSION['SESIONADM'])&&$_SESSION['SESIONADM']==1&&isset($_COOKIE['admin_autenticado'])&&$_COOKIE['admin_autenticado'] === 'true'){
+
+}
+if(isset($_SESSION['SESIONADM'])&&$_SESSION['SESIONADM']==1&&isset($_COOKIE['admin_autenticado'])&&$_COOKIE['admin_autenticado'] === 'true'){
     
-    $_SESSION['SESIONADM']=0;
     $resultado = 0;
     $rstid=0;
+    $_SESSION['SESIONADM']=0;
     setcookie('admin_autenticado', 'true', time() - 3600, '/');
-
-    header("Location: LoginAdmin.php");
-   
+    echo "<script> alert('SESION CERRADA');
+    window.location.href = 'LoginAdmin.php';</script>";
+    
 }
+
+
 ?>
-  
+

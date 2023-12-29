@@ -1,8 +1,9 @@
 <?php
-     
+      
 session_start();
 
-
+      setcookie('temaSeleccionado', "Obscuro", time() + (365 * 24 * 60 * 60), '/');
+  
 if (isset($_COOKIE['temaSeleccionado'])&&isset($_COOKIE['temaSeleccionado'])) {
     // Obtén la preferencia de tema de la cookie
     $preferenciaTema = $_COOKIE['temaSeleccionado'];
@@ -37,11 +38,15 @@ if($preferenciaTema =="Claro"){
 if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === 'true'){
 
   $logeo="Cerrar Sesion";
+  $afiliado=$_SESSION['Afiliado'];
   $Nombres = isset($_SESSION['Nombres']) ? $_SESSION['Nombres'] : "Visitante";
 }else{
-  $_SESSION['SESION']=0;
+  $_SESSION['RolAfiliado']=0;
+        $_SESSION['RolUsuario']=0;
+  $_SESSION['SESIONADM']=0;
   $logeo="Iniciar Sesion";
   $Nombres ="Visitante";
+  $afiliado="";
 }
 include_once '../PHPGRUPO5/plantillas/Encabezado.php';
 ?>
@@ -120,9 +125,12 @@ include_once '../PHPGRUPO5/plantillas/Encabezado.php';
         
         <li class="listado2"><a href="Distribucion.html"> Distribucion</a></li>
         <li class="listado2"><a href="Asistencia.html"> Asistencia</a></li>
-        <li class="listado2"><a href="Login.php"> <?php
+        <li class="listado2"><a href=""style="margin-left: 30px; margin-right: 0px; "> <?php
+       echo $afiliado?></a></li>
+<li class="listado2"><a href="Login.php"> <?php
        echo $logeo?></a></li>
-        <li class="listado2" style="margin-left: 300px; margin-right: 0px; "></li>
+
+        <li class="listado2" style="margin-left: 120px; margin-right: 0px; "></li>
        
         <li class="listado2" style="margin-left: 10px; margin-right: 10px; ">
        
@@ -245,7 +253,7 @@ document.body.classList.toggle("open");
           <h5> Juego Base </h5>
           <h3> The last of us </h3>
           <div class="dvboton">
-            <a href="Descripcion.html">
+            <a href="Compra.php">
             <input type="button" id="btlog"  value="Descripcion" style="background: linear-gradient(rgb(255, 254, 254), rgba(83, 45, 236, 0.1));"> 
           </a>
         </div>
@@ -256,7 +264,7 @@ document.body.classList.toggle("open");
           <h5> Juego Base </h5>
           <h3> The Evil Within </h3>
           <div class="dvboton">
-            <a href="Descripcion.html">
+            <a href="Compra.php">
             <input type="button" id="btlog"  value="Descripcion" style="background: linear-gradient(rgb(255, 254, 254), rgba(83, 45, 236, 0.1));"> 
           </a>
         </div>

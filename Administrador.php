@@ -92,6 +92,7 @@ height:100px;
 </style>
 
     <body>
+    <a style="color: #fff" href="LoginAdmin.php"> Cerrar Sesion</a>
     <?php
         $titulo="ADMINISTRADOR";
         require_once '../PHPGRUPO5/plantillas/Conexion.php';
