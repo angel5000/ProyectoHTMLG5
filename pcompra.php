@@ -37,13 +37,14 @@
                 </div>   
             </div>
         </div>    
+        <form method="POST">
         <div id="contenedorimg2" class="responsive-container">
             <img id="imgport" src="imagenes/assmrgportada.png" alt="Portada" width="350" height="200">
            
             <div class="grboton"></div>
             <h4 id="precio">49,99 US$</h4>
             <div class="boton1">
-                <button id="btpagar" type="button">   COMPRAR AHORA   </button>
+            <input  type="submit" id="btpagar" name="comprar" value="Comprar" >
             </div>
             <div class="boton2">
                 <button id="btcarrito" type="button">   AÑADIR CARRITO   </button>
@@ -52,7 +53,7 @@
                 <button  id="btlistdeseo" type="button">   + A LA LISTA DE DESEOS   </button>
             </div>
         </div> 
-    
+        </form>
         <div>
 
         </div> 
@@ -75,3 +76,22 @@
     <script src="Js/OpcionCompra.js"></script>
 </body>
 </html>
+
+
+
+<?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+         
+     
+        if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === 'true'){
+            
+               header('Location: Venta.php');
+              die();
+            }else{
+                header('Location: Login.php');
+                die();
+          }
+     
+          }
+          ?>
+    

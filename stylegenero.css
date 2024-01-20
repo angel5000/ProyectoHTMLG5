@@ -17,12 +17,7 @@ div h2{
     color: #C2C2C2;
     margin: 5.5px;
 }
-div span{
-    font-size: 18px;
-    color: #F5F5F5;
-    line-height : 25px;
-    padding: 85px;
-}
+
 
 .contenedorimg{
     flex: content;
@@ -92,6 +87,11 @@ figure.juegofoto{
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
+.juego{
+    max-height: 100%;
+    height: 400px;
+}
+
 #juegos{
     margin-left: 110px;
     margin-right: 130px;
@@ -99,7 +99,7 @@ figure.juegofoto{
     padding: 0px;
     
 }
-div.carrusel{
+div.carrusell{
         margin: 0 auto;
         text-align: center;
         margin-left: 1.7cm;

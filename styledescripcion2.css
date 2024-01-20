@@ -106,8 +106,7 @@ div h4{
     padding-top: 50px;
 }
 
-
-.boton1 button {
+.boton1 input[type="Submit"] {
     padding-right: 100px;
     padding-left: 100px;
     width: 360px;
@@ -120,6 +119,7 @@ div h4{
     margin-bottom: 10px;
     border-radius: 4px;
 }
+
 
 .boton2 button {
     border-style: solid;
