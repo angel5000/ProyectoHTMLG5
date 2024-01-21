@@ -1,0 +1,81 @@
+.container{
+    
+margin-top: 50px;
+
+border:2px solid rgb(10, 8, 12);
+border-radius: 10px;
+padding: 10px;
+margin-bottom: 60px;
+}
+#formactu{
+    
+    position: absolute;
+    top: 118%;
+    left: 50%;
+   
+    transform: translate(-50%, -50%);
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+}
+#h2actu{
+    margin-left: -250px;
+}
+#idform{
+    border:2px solid rgb(10, 8, 12);
+border-radius: 10px;
+width: 400px;
+padding: 10px;
+
+}
+#elemform{
+    margin-left: 20px;
+   
+}
+#txtbox{
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#enviar{
+    width: 200px;
+    margin-left: 50px;
+}
+.table{
+    border-collapse: collapse;
+
+    background-color:rgba(162, 207, 205, 0.658);
+
+}
+ tr{
+    font-size: 14px;
+        padding-left:10px;
+        padding-right:16px;
+
+        background-color: #f2f2f2;
+    text-align: center;
+}
+
+th, td {
+    border: #b2b2b2 1px solid;
+        text-align: center;
+    
+    }
+
+    .mb-3{
+        margin-top: 50px;
+    }
+    .form-label{
+        margin-left: 20px;
+    }
+#txtbuscar{
+width: 200px;
+border-color: black;
+display: inline-block;
+margin-left: 20px;
+    }
+ .btn {
+
+  margin-left: 20px;
+    }

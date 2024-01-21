@@ -2,13 +2,13 @@
 
 class Clientes{
     private $id,$nombre, $apellido, $email, $rol, $fechaRegistro;
-    function __construct($id, $nombre, $apellido, $email, $rol, $fechaRegistro) {
-        $this->id = $id;
+    function __construct() {
+       /*$this->id = $id;
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->email = $email;
-        $this->rol = $rol;
-        $this->fechaRegistro = $fechaRegistro;
+       
+        $this->fechaRegistro = $fechaRegistro;*/
     }
 
     // Métodos Getter
@@ -28,9 +28,7 @@ class Clientes{
         return $this->email;
     }
 
-    public function getRol() {
-        return $this->rol;
-    }
+    
 
     public function getFechaRegistro() {
         return $this->fechaRegistro;
@@ -53,9 +51,7 @@ class Clientes{
         $this->email = $email;
     }
 
-    public function setRol($rol) {
-        $this->rol = $rol;
-    }
+    
 
     public function setFechaRegistro($fechaRegistro) {
         $this->fechaRegistro = $fechaRegistro;
