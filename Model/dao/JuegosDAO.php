@@ -27,8 +27,23 @@ class JuegosDAO {
 
     }
 
-    public function insert($cat){
+    public function insert($id, $nombre, $descripcion, $precio, $categoria, $Plataforma,$Desarrollador, $FechaLanzamineto,
+    $ModoJuego){
 
+$stmt = $pdo->prepare("INSERT INTO Juegos (id, nombre, descripcion, precio, categoria, plataforma, id_desarrollador, fecha_lanzamiento, modo_juego)
+                      VALUES (:id, :nombre, :descripcion, :precio, :categoria, :plataforma, :id_desarrollador, :fecha_lanzamiento, :modo_juego)");
+
+$stmt->bindParam(':id', $id);
+$stmt->bindParam(':nombre', $nombre);
+$stmt->bindParam(':descripcion', $descripcion);
+$stmt->bindParam(':precio', $precio);
+$stmt->bindParam(':categoria', $categoria);
+$stmt->bindParam(':plataforma', $Plataforma);
+$stmt->bindParam(':id_desarrollador', $Desarrollador);
+$stmt->bindParam(':fecha_lanzamiento', $FechaLanzamineto);
+$stmt->bindParam(':modo_juego', $ModoJuego);
+
+$stmt->execute();
 
     }
     public function update($cat){

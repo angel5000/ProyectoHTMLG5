@@ -1,7 +1,11 @@
 <?php
+
+
 require_once 'model/dao/JuegosDAO.php';
-//require_once 'model/dao/CategoriasDAO.php';
+require_once 'model/dto/Categoria.php';
+require_once 'model/dto/InterfaceDesarrolador.php';
 require_once 'model/dto/Juegos.php';
+//require_once 'model/dao/CategoriasDAO.php';
 
 class JuegosController {
     private $model;
@@ -16,7 +20,7 @@ class JuegosController {
       $resultados = $this->model->selectAll("");
       // comunicarnos a la vista
       $titulo="Buscar Juegos";
-      require_once VPRODUCTOS.'list.php';
+      require_once LJUEGOS.'list.php';
 
       
       

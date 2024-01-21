@@ -20,7 +20,15 @@ class IndexController {
             require_once 'view/ListJuegos/'.$page.'.php';
             require_once FOOTER;
         }
-        
+        if(!empty($_GET['l'])){
+            $page =  $_GET['l']; // limpiar datos
+            // flujo de ventanas
+            require_once HEADER;
+           // require_once SUBHEADER;
+            require_once 'view/Administrador/'.$page.'.php';
+           // require_once FOOTER;
+           
+        }
         else{
                
           require_once 'view/homeView.php'; //mostrando la vista de home de la aplicacion

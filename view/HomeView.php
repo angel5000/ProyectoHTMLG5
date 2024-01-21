@@ -1,7 +1,6 @@
 <?php require_once HEADER; ?>
 <?php require_once SUBHEADER; ?>
 
-
 <div class="conjconten">
       <h3> Descubre lo mejor en Juegos </h3>
     <div class="contenedor">

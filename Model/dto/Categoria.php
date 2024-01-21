@@ -2,9 +2,9 @@
 
 class Categoria{
     private $id,$Categoria;
-    function __construct() {
+    /*function __construct() {
         
-    }
+    }*/
     function __construct($id,$Categoria) {
         $this->id = $id;
         $this->Categoria = $Categoria;

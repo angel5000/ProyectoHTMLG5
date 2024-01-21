@@ -8,17 +8,17 @@ private $id, $nombreDev, $Correo,$Direccion;
     function __construct($id, $nombreDev,$Correo,$Direccion )  {
       
         $this->id = $id;
-        this->nombreDev = $nombreDev;
-        this->Correo =  $Correo;
-        this->Direccion= $Direccion;
+        $this->nombreDev = $nombreDev;
+        $this->Correo =  $Correo;
+        $this->Direccion= $Direccion;
        
 
     }
-    public function getId() {
+    public function getIddev() {
         return $this->id;
     }
 
-    public function setId($id) {
+    public function setIddev($id) {
          $this->id=$id;
     }
     public function setNombredev($nombreDev ) {

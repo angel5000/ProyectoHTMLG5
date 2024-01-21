@@ -1,28 +1,31 @@
 <?php
 
 class Juegos extends Categoria implements DesarrolladorInterface{
-    private $id, $nombre, $descripcion, $precio, $categoria, $Plataforma,$Desarrollador, $FechaLanzamineto
-    $ModoJuego;
+    private $id, $NombJuego , $descripcion, $precio, $categoria, $Plataforma,$Desarrollador, $FechaLanzamineto
+    ,$ModoJuego;
 
-    function __construct() {
+   /* function __construct() {
         
-    }
-    function __construct($id, $nombre, $descripcion, $precio, $categoria, $Plataforma,$Desarrollador, $FechaLanzamineto
-    $ModoJuego)  {
+    }*/
+    function __construct($id, $NombJuego , $descripcion, $precio, $categoria, $Plataforma,$Desarrollador, $FechaLanzamineto
+    ,$ModoJuego)  {
         parent::__construct($categoria);
         $this->id = $id;
-        this->nombre = $nombre;
-        this->descripcion =  $descripcion;
-        this->precio = $precio;
-        this->Plataforma = $Plataforma;
-        this->Desarrollador = $Desarrollador;
-        this->FechaLanzamineto = $FechaLanzamineto;
-        this->ModoJuego = $ModoJuego;
+        $this->NombJuego  = $NombJuego ;
+        $this->descripcion =  $descripcion;
+        $this->precio = $precio;
+        $this->Plataforma = $Plataforma;
+        $this->Desarrollador = $Desarrollador;
+        $this->FechaLanzamineto = $FechaLanzamineto;
+        $this->ModoJuego = $ModoJuego;
 
     }
    
-    public function getId() {
+    public function getIdj() {
         return $this->id;
+    }
+    public function setIdj($id) {
+        $this->id = $id;
     }
 
     public function setNombre($nombre) {
@@ -74,8 +77,8 @@ class Juegos extends Categoria implements DesarrolladorInterface{
         return $this->ModoJuego;
     }
     
-    public function getId() {
-        return $this->desarrollador->getId();
+    public function getIddev() {
+        return $this->desarrollador->getIddev();
     }
 
     public function getNombreDev() {
