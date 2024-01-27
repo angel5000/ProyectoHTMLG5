@@ -8,7 +8,7 @@
 <?php
 if (isset($_GET['id'])) {
     $idJuego = $_GET['id'];
-
+var_dump( $idJuego);
 
     ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
 
         <div id="contenedorvideo" >
             <div class="Nombre">
-                <h1 id="titulo"><?php echo $fila->NombJuego;?></h1>
+                <h1 id="titulo"><?php echo $fila->NombJuego; var_dump( $fila->NombJuego);?></h1>
                 <div>
                     <h2>Descripción general</h2>
                 </div>

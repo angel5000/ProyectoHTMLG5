@@ -7,15 +7,24 @@ border-radius: 10px;
 padding: 10px;
 margin-bottom: 60px;
 }
+.containerjg{
+    
+    margin-top: 50px;
+    
+    border:2px solid rgb(10, 8, 12);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 60px;
+    margin-left: 10px;
+    }
+#btnuevo{
+margin-left: 640px;
+}
 #formactu{
     
-    position: absolute;
-    top: 118%;
-    left: 50%;
-   
-    transform: translate(-50%, -50%);
-    margin-bottom: 50px;
-    padding-bottom: 50px;
+   margin-left: 480px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
 }
 #h2actu{
     margin-left: -250px;

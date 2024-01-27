@@ -27,13 +27,10 @@
     <label  class="form-label">Buscar</label>
     <input type="text" class="form-control" id="txtbuscar" >
     <button  type="button" onclick="buscarCliente()" 
-    class="btn btn-primary">Buscar Cliente</button>
-    <button id="btnuevo" type="button" onclick="nuevo()" 
-    class="btn btn-primary">Registrar Cliente</button>
+    class="btn btn-primary">Buscar Juego</button>
+   
     </form>      
-    <form >
-  
-    </form>
+    
 </div>
  
   
@@ -41,19 +38,27 @@
 
 
 
-<div class="container">
+<div class="containerjg">
 <table class="table">
   <thead>
     <tr>
       <th scope="colid">ID</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">Correo</th>
-      <th scope="col">FechaRegistro</th>
-      <th scope="col"> </th>
+      <th scope="colnm">NombreJuego</th>
+      <th scope="colds">Descripcion</th>
+      <th scope="colpr">Precio</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Plataforma</th>
+      <th scope="col">Desarrollador</th>
+      <th scope="col">FechaLanzamiento</th>
+      <th scope="col">Modojuego</th>
+      <th scope="col">Puntuacion</th>
+      <th scope="col">Estado</th>
+      <th scope="col"> .</th>
+      <th scope="col"> .</th>
+     
     </tr>
   </thead>
-  <tbody id ="tabladt">
+  <tbody id ="tabladtj">
   <?php        
  
                 foreach ($resultados as $fila) {
@@ -61,19 +66,38 @@
 
 
     <tr>
-    <td id ="columid"><?php echo $fila->idCliente;?></td>
-    <td><?php echo $fila->nombre;?></td>
-    <td><?php echo $fila->apellido;?></td>
-    <td><?php echo $fila->email;?></td>
-    <td><?php echo $fila->fechaRegistro;?></td>
+    <td id ="columid"><?php echo $fila->idJuego;?></td>
+    <td><?php echo $fila->NombJuego;?></td>
+    <td><?php echo $fila->Descripcion;?></td>
+    <td><?php echo $fila->precio;?></td>
+    <td><?php echo $fila->Categoria;?></td>
+    <td><?php echo $fila->Plataformas;?></td>
+    <td><?php echo $fila->Desarrollador;?></td>
+    <td><?php echo $fila->Fecha_Lanzamiento;?></td>
+    <td><?php echo $fila->ModoJuego;?></td>
+    <td><?php echo $fila->Puntuacion;?></td>
+    <td><?php echo $fila->Estado;?></td>
     <td>
    
     <button type="button" class="btn btn-primary" onclick="loadUpdatePage(<?php echo $fila->idCliente; ?>)">
     Actualizar
 </button>
-    <button type="submit" class="btn btn-danger"  onclick="eliminar(<?php echo $fila->idCliente; ?>)">
-                    <i class="fas fa-trash-alt"></i>Eliminar</button>
+</td>
+<td>
+<a onclick="if(!confirm('Esta seguro que desea Inhabilitar?'))return false;" 
+                    href="index.php?c=Juegos&f=delete&id=<?php echo $fila->idJuego; ?>">
+    <button type="submit" class="btn btn-danger"  >
+                    <i class="fas fa-trash-alt"></i>Inhabilitar</button>
+                </a>
+
+                <a onclick="if(!confirm('Esta seguro que desea habilitar?'))return false;" 
+                    href="index.php?c=Juegos&f=Habilitar&id=<?php echo $fila->idJuego; ?>">
+    <button type="submit" class="btn btn-success"  >
+                    <i class="fas fa-trash-alt"></i>Habilitar</button>
+                </a>
+
     </td>
+   
     </tr>  
     
                 <?php } ?>

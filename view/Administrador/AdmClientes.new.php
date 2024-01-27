@@ -13,33 +13,28 @@
 
 </head>
 <body>
-<h2 id="h2actu">Actualizar datos</h2>
+<h2 id="h2actu">Registrar Cliente</h2>
   <div>
 
 
   </div>  
   <div id="idform">
-            <form action="index.php?c=Cliente&f=edit" method="POST" name="formProdNuevo" id="formactua">
+            <form action="index.php?c=Cliente&f=nuevo" method="POST" name="formNuevo" id="formactua">
                <div id="elemform">
-          <div>
-    <input type="hidden" name="txtid2" value="<?php echo $prod->idCliente;?>">
-            <label>Id:</label>
-                <input type="text" name="txtid" readonly 
-                value="<?php echo $prod->idCliente;?> ">
-    </div>
+         
                 
          <div><label>Nombres:</label>
-     <input type="text" name="txtnombre" value="<?php echo $prod->nombre;?>" id="txtbox">
+     <input type="text" name="txtnombre" value="" id="txtbox">
        </div>
           <div> <label>Apellidos:</label>
-      <input type="text" name="txtapellido" value="<?php echo $prod->apellido;?>"id="txtbox">
+      <input type="text" name="txtapellido" value=""id="txtbox">
                 </div>
                 <div> <label>CorreoElectronico:</label>
-      <input type="text" name="txtemail" value="<?php echo $prod->email;?>"id="txtbox">
+      <input type="text" name="txtemail" value=""id="txtbox">
                 </div>
                 
                 <div >
-                <input type="submit" value="Actualizar" class="btn btn-primary" id="enviar" >
+                <input type="submit" value="Registrar" class="btn btn-primary" id="enviar" >
                 </div>
                 </div>
             </form>

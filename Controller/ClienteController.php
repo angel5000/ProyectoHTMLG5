@@ -17,13 +17,51 @@ class ClienteController {
       //comunica con el modelo (enviar datos o obtener datos)
       $resultados = $this->model->selectAll("");
       // comunicarnos a la vista
-      $titulo="Buscar Juegos";
+      $titulos="Clientes";
       require_once LCLIENTE.'list.php';
 
-      
+      exit();
       
     }
-   
+    public function formnuevo(){
+        require_once LCLIENTE.'new.php';
+    }
+    public function nuevo(){
+        
+        if (isset($_SERVER['REQUEST_METHOD'])&&$_SERVER['REQUEST_METHOD'] == 'POST') {// actualizar
+          // verificaciones
+                 //if(!isset($_POST['codigo'])){ header('');}
+              // leer parametros
+              $prod = new Clientes();
+           
+              $prod->setNombre(htmlentities($_POST['txtnombre']));
+              $prod->setApellido(htmlentities($_POST['txtapellido']));
+              $prod->setEmail(htmlentities($_POST['txtemail']));
+            
+              $exito = $this->model->new($prod);
+             
+              if ($exito==true){
+              echo" 
+         <link rel='stylesheet' type='text/css' href='lib/sweet-alert.css'>
+         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>;
+         <script>
+         Swal.fire({
+            title: 'Cliente Registrado!',
+            icon: 'success'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'index.php?c=Cliente&f=index&=AdmClientes';
+            }else{
+                window.location.href = 'index.php?c=Cliente&f=index&=AdmClientes';
+            }
+        });
+         
+           </script>
+           ";
+    }
+          
+          } 
+        }
     public function view_edit(){
         //leer parametro
         $id= $_GET['id']; // verificar, limpiar
@@ -77,21 +115,83 @@ class ClienteController {
            </script>
            ";
     }
-           //echo $msj;
-              /*if (!$exito) {
-                  $msj = "No se pudo realizar la actualizacion";
-                  $color = "danger";
-                 
-              }
-               if(!isset($_SESSION)){ session_start();};
-              $_SESSION['mensaje'] = $msj;
-              $_SESSION['color'] = $color;*/
-              
-          //llamar a la vista
-        
-        
-          // header('Location:index.php?c=Cliente&f=index&=AdmClientes');
+          
           } 
         }
+
+        public function delete(){
+            //leeer parametros
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          
+           if(isset($_POST['id'])){
+            $prod = new Clientes();
+       
+             $idCliente = htmlentities($_POST['id']);
+           
+             $prod->setId($idCliente);
+               $exito = $this->model->delete($prod);
+                     var_dump($exito);
+               if ($exito==true){
+                echo" 
+           <link rel='stylesheet' type='text/css' href='lib/sweet-alert.css'>
+           <script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>;
+           <script>
+           Swal.fire({
+              title: 'Cliente Actualizado!',
+              icon: 'success'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  window.location.href = 'index.php?c=Cliente&f=index&=AdmClientes';
+              }else{
+                  window.location.href = 'index.php?c=Cliente&f=index&=AdmClientes';
+              }
+          });
+           
+             </script>
+             ";
+             echo"  <script>alert('sss');</script>";
+      }
+                  if (!$exito) {
+                    echo"  <script>alert('sss');</script>";
+                     // $msj = "No se pudo eliminar la actualizacion";
+                   //   $color = "danger";
+                  }
+              //     if(!isset($_SESSION)){ session_start();};
+               //   $_SESSION['mensaje'] = $msj;
+                //  $_SESSION['color'] = $color;
+              //llamar a la vista
+              //  header('Location:index.php?c=productos&f=index');
+        }
+    }
+  
+
+}
+public function search(){
+  // lectura de parametros enviados
+  $parametro = (!empty($_POST["b"]))?htmlentities($_POST["b"]):"";
+  //comunica con el modelo (enviar datos o obtener datos)
+   $resultados = $this->model->selectAll($parametro);
+  // comunicarnos a la vista
+//  $titulo="Buscar productos";
+//  require_once LCLIENTE.'list.php';
+}
+public function Buscar(){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if(isset($_POST['id'])){
+            $prod = new Clientes();
+            $Nombre = htmlentities($_POST['id']);
+            $prod->setNombre($Nombre);
+            $resultado = $this->model->Search($prod);
+           // $resultados = $this->model->selectAll($resultado);
+            
+           // var_dump($resultado);
+          //  require_once LCLIENTE.'list.php';
+          header('Content-Type: application/json');
+          echo json_encode($resultado);
+          exit;
+        }
+       
+    }
+}
 
 }

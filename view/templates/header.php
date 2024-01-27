@@ -50,9 +50,6 @@ if(isset($_COOKIE['usuario_autenticado'])&&$_COOKIE['usuario_autenticado'] === '
 }
 include_once '../PHPGRUPO5/plantillas/Encabezado.php';
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>

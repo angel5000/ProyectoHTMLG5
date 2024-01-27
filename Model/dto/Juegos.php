@@ -2,22 +2,12 @@
 
 class Juegos extends Categoria implements DesarrolladorInterface{
     private $id, $NombJuego , $descripcion, $precio, $categoria, $Plataforma,$Desarrollador, $FechaLanzamineto
-    ,$ModoJuego;
+    ,$ModoJuego, $imagen, $Estado; 
 
-   /* function __construct() {
-        
-    }*/
-    function __construct($id, $NombJuego , $descripcion, $precio, $categoria, $Plataforma,$Desarrollador, $FechaLanzamineto
-    ,$ModoJuego)  {
-        parent::__construct($categoria);
-        $this->id = $id;
-        $this->NombJuego  = $NombJuego ;
-        $this->descripcion =  $descripcion;
-        $this->precio = $precio;
-        $this->Plataforma = $Plataforma;
-        $this->Desarrollador = $Desarrollador;
-        $this->FechaLanzamineto = $FechaLanzamineto;
-        $this->ModoJuego = $ModoJuego;
+   
+    function __construct(
+   )  {
+   
 
     }
    
@@ -72,6 +62,9 @@ class Juegos extends Categoria implements DesarrolladorInterface{
     public function setModoJuego($ModoJuego) {
         $this->ModoJuego = $ModoJuego;
     }
+    public function setImange($imagen) {
+        $this->imagen = $imagen;
+    }
 
     public function getModoJuego() {
         return $this->ModoJuego;
@@ -92,27 +85,21 @@ class Juegos extends Categoria implements DesarrolladorInterface{
     public function getDireccion() {
         return $this->desarrollador->getDireccion();
     }
-
-
-
-
-
-    // Methods get y set parametrizados
-    public function __set($nombre, $valor) {
-        // Verifica que la propiedad exista
-        if (property_exists('Categoria', $nombre)) {
-            $this->$nombre = $valor;
-        } else {
-            echo $nombre . " No existe.";
-        }
+    public function getImange() {
+        return $this->imagen->getImangen();
     }
 
-    public function __get($nombre) {
-        // Verifica que exista la propiedad
-        if (property_exists('Categoria', $nombre)) {
-            return $this->$nombre;
-        }
-// Retorna null si no existe
-        return NULL;
+    public function getEstado() {
+        return $this->Estado;
     }
+    
+    public function setEstado($Estado) {
+        $this->Estado = $Estado;
+    }
+    
+    
+
+
+
+   
 }

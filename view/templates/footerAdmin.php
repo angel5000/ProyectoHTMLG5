@@ -5,12 +5,16 @@
     <title>Título de tu Página</title>
     <style>
         .footerAdmin {
+        
             background-color:#979797;
             color: black;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
+           text-align: center;
+           
+            padding: 10px;
+  text-align: center;
+  /* Asegura que el pie de página siempre esté en la parte inferior */
+
+  bottom: 0;
             width: 100%;
             border-radius: 10px;
         }

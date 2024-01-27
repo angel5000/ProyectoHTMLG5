@@ -1,9 +1,10 @@
 <?php
-   include_once '../PHPGRUPO5/plantillas/Encabezado.php';
- require_once HEADERADMIN; 
+   
+ require_once HEADERADMIN;
+
  session_start();
 if(isset($_COOKIE['admin_autenticado'])&&$_COOKIE['admin_autenticado'] === 'true'&&
-(isset($_SESSION['RolUsuario']) && $_SESSION['RolUsuario'] == 102)){
+(isset($_SESSION['RolUsuarioadm']) && $_SESSION['RolUsuarioadm'] == 102)){
 
        
 
@@ -98,7 +99,7 @@ height:100px;
         <div style="  border:2px solid rgb(66, 62, 82); 
         margin-right=200px; padding-right=1px; 
     max-width: 8%;">
-    <a style="color: #fff" href=""> Cerrar Sesion</a>
+    <a id ="cerrrarSesion"style="color: #fff" href="index.php?c=Admin&f=index&lg=Logout" > Cerrar Sesion</a>
     </div>
     <?php
         $titulo="ADMINISTRADOR";
@@ -305,11 +306,14 @@ height:100px;
 <?php
     
     } else {
-        echo "<script> alert('ACCESOs DENEGADO USUARIO NO AUTORIZADO');
-        window.location.href = 'LoginAdmin.php' </script>";
-       die();
+      //  header("LoginAdmin.php");
+      echo "<script>
+      window.location.href = 'LoginAdmin.php' </script>";
+     die();
+     //  die();
        
     }
    
     ?>
     <?php require_once FOOTERADMIN; ?>
+    

@@ -9,7 +9,7 @@ class IndexController {
             require_once SUBHEADER;
             require_once 'view/estaticas/'.$page.'.php';
             require_once FOOTER;
-            exit();
+           // exit();
         }
         
         if(!empty($_GET['b'])){
@@ -23,11 +23,19 @@ class IndexController {
         if(!empty($_GET['l'])){
             $page =  $_GET['l']; // limpiar datos
             // flujo de ventanas
-            require_once HEADER;
+            require_once HEADERADMIN;
            // require_once SUBHEADER;
-            require_once 'view/Administrador/'.$page.'.php';
-           // require_once FOOTER;
+            require_once 'view/'.$page.'.php';
+            require_once FOOTERADMIN;
+           exit();
+        }
+        if(!empty($_GET['j'])){
+            $page =  $_GET['j']; // limpiar datos
+            // flujo de ventanas
+            require_once HEADER;
            
+            require_once 'view/'.$page.'.php';
+            require_once FOOTER;
         }
         else{
                

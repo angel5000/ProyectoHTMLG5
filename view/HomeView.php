@@ -44,7 +44,7 @@
           <h5> Juego Base </h5>
           <h3> Assassin’s Creed Mirage </h3>
           <div class="dvboton">
-            <a href="Descripcion2.html">
+            <a href="Compra.php">
             <input type="button" id="btlog"  value="Descripcion" style="background: linear-gradient(rgb(255, 254, 254), rgba(83, 45, 236, 0.1));"> 
           </a>
         </div>
@@ -66,7 +66,7 @@
           <h5> Juego Base </h5>
           <h3> The Evil Within </h3>
           <div class="dvboton">
-            <a href="Compra.php">
+            <a href="index.php?c=Juegos&selectone?id=5">
             <input type="button" id="btlog"  value="Descripcion" style="background: linear-gradient(rgb(255, 254, 254), rgba(83, 45, 236, 0.1));"> 
           </a>
         </div>

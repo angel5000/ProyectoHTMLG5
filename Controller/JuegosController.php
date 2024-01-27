@@ -13,17 +13,33 @@ class JuegosController {
     public function __construct() {// constructor
         $this->model = new JuegosDAO();
     }
-
-    // funciones del controlador
     public function index() { 
       //comunica con el modelo (enviar datos o obtener datos)
       $resultados = $this->model->selectAll("");
       // comunicarnos a la vista
-      $titulo="Buscar Juegos";
+      $titulos="VideoJuegos";
       require_once LJUEGOS.'list.php';
 
+      exit();
+      
+    }
       
       
+    
+    // funciones del controlador
+    public function selectone() { 
+      //if (isset($_GET['id'])) {
+        $idJuego = $_GET['id'];
+        $valor = new Juegos();
+       // $valor->setNombre($Nombre);
+      $resultados = $this->model->selectById($idJuego);
+   
+     var_dump( $resultados);
+   
+      
+     
+     // }
+      return $resultados;
     }
 
     public function search(){
@@ -89,32 +105,97 @@ class JuegosController {
   }
   
   public function delete(){
-      //leeer parametros
-     $prod = new Producto();
-     $prod->setId(htmlentities($_REQUEST['id']));
-     $prod->setUsuario('usuario'); //$_SESSION['usuario'];
-     $fechaActual = new DateTime('NOW');
-     $prod->setFechaActualizacion($fechaActual->format('Y-m-d H:i:s'));
-           
-         //comunicando con el modelo
-         $exito = $this->model->delete($prod);
-        $msj = 'Producto eliminado exitosamente';
-            $color = 'primary';
-            if (!$exito) {
-                $msj = "No se pudo eliminar la actualizacion";
-                $color = "danger";
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+          
+      if(isset($_GET['id'])){
+       $jg = new Juegos();
+      
+        $idJuego = htmlentities($_GET['id']);
+      $ESTADO='I';
+        $jg->setIdj($idJuego);
+        $jg->setEstado($ESTADO);
+          $exito = $this->model->updatejg( $jg );
+        
+                
+          if ($exito==true){
+           echo" 
+      <link rel='stylesheet' type='text/css' href='lib/sweet-alert.css'>
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>;
+      <script>
+      Swal.fire({
+         title: 'Estado Actualizado!',
+         icon: 'success'
+     }).then((result) => {
+        
+      if (result.isConfirmed) {
+        window.location.href = 'index.php?c=Juegos&f=index&=AdmJuegos';
+    }else{
+        window.location.href = 'index.php?c=Juegos&f=index&=AdmJuegos';
+    }
+     });
+      
+        </script>
+        ";
+      
+    
+ 
+             if (!$exito) {
+               echo"  <script>alert('sss');</script>";
+                // $msj = "No se pudo eliminar la actualizacion";
+              //   $color = "danger";
+             }
             }
-             if(!isset($_SESSION)){ session_start();};
-            $_SESSION['mensaje'] = $msj;
-            $_SESSION['color'] = $color;
-        //llamar a la vista
-          header('Location:index.php?c=productos&f=index');
+          }
+        }
   }
 
+  public function Habilitar(){
+    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+          
+      if(isset($_GET['id'])){
+       $jg = new Juegos();
+      
+        $idJuego = htmlentities($_GET['id']);
+      $ESTADO='A';
+        $jg->setIdj($idJuego);
+        $jg->setEstado($ESTADO);
+          $exito = $this->model->updatejg( $jg );
+        
+                
+          if ($exito==true){
+           echo" 
+      <link rel='stylesheet' type='text/css' href='lib/sweet-alert.css'>
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>;
+      <script>
+      Swal.fire({
+         title: 'Estado Actualizado!',
+         icon: 'success'
+     }).then((result) => {
+         if (result.isConfirmed) {
+             window.location.href = 'index.php?c=Juegos&f=index&=AdmJuegos';
+         }else{
+             window.location.href = 'index.php?c=Juegos&f=index&=AdmJuegos';
+         }
+     });
+      
+        </script>
+        ";
+       
+    
+ 
+             if (!$exito) {
+               echo"  <script>alert('ERROR NO SE PUDO CAMBIAR');</script>";
+                // $msj = "No se pudo eliminar la actualizacion";
+              //   $color = "danger";
+             }
+            }
+          }
+        }
+  }
 
    // muestra el formulario de editar producto
-   public function view_edit(){
-     //leer parametro
+    function view_editty(){
+   /*  //leer parametro
      $id= $_GET['id']; // verificar, limpiar
      //comunicarse con el modelo de productos
     $prod = $this->model->selectOne($id);
@@ -125,12 +206,12 @@ class JuegosController {
     // comunicarse con la vista
     $titulo="Editar producto";
     require_once VPRODUCTOS.'edit.php';
-
+*/
   }
 
    // lee datos del formulario de editar producto y lo actualiza en la bdd (llamando al modelo)
-   public function edit(){
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {// actualizar
+   function editt(){
+  /*  if ($_SERVER['REQUEST_METHOD'] == 'POST') {// actualizar
       // verificaciones
              //if(!isset($_POST['codigo'])){ header('');}
           // leer parametros
@@ -160,6 +241,6 @@ class JuegosController {
       //llamar a la vista
      header('Location:index.php?c=productos&f=index');
          
-      } 
+      } */
    }
 }

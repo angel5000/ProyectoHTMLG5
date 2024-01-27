@@ -120,33 +120,28 @@ $stmt->closeCursor();
 $stmt = $pdo->query("SELECT @pRol as pRol");
 $rstid = $stmt->fetch(PDO::FETCH_ASSOC);
 $pRol = $rstid['pRol'];
-$_SESSION['RolUsuario']= $pRol;
+$_SESSION['RolUsuarioadm']= $pRol;
 
   
-if($resultado==1&&isset($_SESSION['RolUsuario'])&&$_SESSION['RolUsuario']==102){
+if($resultado==1&&isset($_SESSION['RolUsuarioadm'])&&$_SESSION['RolUsuarioadm']==102){
    
         setcookie('admin_autenticado', 'true', time() + 3600, '/');
         $_SESSION['SESIONADM']=1;
-        header("Location: Administrador.php");
+        header("Location: index.php?c=index&f=index&l=Administrador");
        }
-    
-else{
-echo '<script> alert("ACCESO DENEGADO USUARIO NO AUTORIZADO");</script>';
+       else{
+        echo "<script> alert('USUARIO NO IDENTIFICADO');
+        </script>";
+       }
+    if(isset($_SESSION['SESIONADM'])&&$_SESSION['SESIONADM']==1&&isset($_COOKIE['admin_autenticado'])&&$_COOKIE['admin_autenticado'] === 'true'
+    &&isset($_SESSION['RolUsuarioadm'])&&$_SESSION['RolUsuarioadm']==102){
+        header("Location: index.php?c=index&f=index&l=Administrador");
+    }
 
 }
-}
 
 }
-if(isset($_SESSION['SESIONADM'])&&$_SESSION['SESIONADM']==1&&isset($_COOKIE['admin_autenticado'])&&$_COOKIE['admin_autenticado'] === 'true'){
-    
-    $resultado = 0;
-    $rstid=0;
-    $_SESSION['SESIONADM']=0;
-    setcookie('admin_autenticado', 'true', time() - 3600, '/');
-    echo "<script> alert('SESION CERRADA');
-    window.location.href = 'LoginAdmin.php';</script>";
-    
-}
+
 
 
 ?>

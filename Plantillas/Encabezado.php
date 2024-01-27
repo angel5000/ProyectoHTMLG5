@@ -34,14 +34,12 @@
         <a href="/PHPGRUPO5/index.php">Index| </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Compra.php" >Compra | </a>
         <a href="<?php echo $path ?>../PHPGRUPO5/Venta.php" >Venta | </a>
-        <a href="<?php echo $path ?>../PHPGRUPO5/LoginAdmin.php" >Administrador | | </a> 
+        <a href="<?php echo $path ?>../PHPGRUPO5/index.php?c=index&a=index&l=Administrador" >Administrador | | </a> 
         <a href="<?php echo $path ?>../PHPGRUPO5/Pagos.php" >Pagos | | </a> 
        
         <a href="<?php echo $path ?>../PHPGRUPO5/PruebaUsuario.php" >PRUEBA USUARIOS |</a>
         <a href="<?php echo $path ?>../PHPGRUPO5/PruebaAfiliado.php" >PRUEBA AFILIADO |</a>
         <a href="<?php echo $path ?>../PHPGRUPO5/PruebaAdmin.php" >PRUEBA ADMINISTRADOR |</a>
     </nav>
-   <span>EN CUANTO A LO DE VENTA Y PAGOS, SERIA APARENTAR COMO SI SE ESCOJIESE UN JUEGO
-    Y SIMULAR LA COMPRA.
-   </span>
+   
 </div>

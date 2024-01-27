@@ -1,3 +1,4 @@
+<?php include_once '../PHPGRUPO5/plantillas/Encabezado.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,14 +30,11 @@
 </head>
 <body>
 
-<div class="header">
-    <h1>Mi Sitio Web</h1>
-    <p>Encabezado de mi sitio web</p>
-</div>
+
 
 <div class="nav-bar">
-    <a href="modulo1.php">Módulo 1</a>
-    <a href="modulo2.php">Módulo 2</a>
+    <a href="index.php?c=Cliente&f=index&=AdmClientes">Clientes</a>
+    <a href="index.php?c=Juegos&f=index&=AdmJuegos">Juegos</a>
     <a href="modulo3.php">Módulo 3</a>
     <a href="modulo4.php">Módulo 4</a>
 </div>
